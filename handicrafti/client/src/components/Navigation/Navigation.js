@@ -1,4 +1,5 @@
 import './Navigation.css';
+import {Link} from 'react-router-dom';
 export const Navigation = () => {
 
     return (
@@ -9,15 +10,13 @@ export const Navigation = () => {
             </div>
             <div className="right-nav-bar">
                 <ul>
-                    <li><a href="/list">List</a></li>
-                    <li><a href="/gallery">Gallery</a></li>
-                    <li><a href="/Login">Login</a></li>
-                    <li><a href="/Register">Register</a></li>
+                    <li><Link to="/list">List</Link></li>
+                    <li><Link to="/gallery">Gallery</Link></li>
+                    <li><Link to="/Login">Login</Link></li>
+                    <li><Link to="/Register">Register</Link></li>
 
                 </ul>
             </div>
-
-
 
         </nav>
     );

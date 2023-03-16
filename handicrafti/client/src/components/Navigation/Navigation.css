@@ -26,7 +26,7 @@ ul {
     flex-wrap: wrap;
     text-decoration: none;
     list-style-type: none;
-    justify-content: end;
+    justify-content: flex-end;
 
 }
 
