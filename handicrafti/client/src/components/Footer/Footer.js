@@ -1,5 +1,11 @@
+import './Footer.css'
 export const Footer = () => {
-return (
-    <p>All copirights reserved &copy;</p>
-)
+    return (
+        <footer>
+            <div className="footer-text-container">
+                <p>All copirights reserved &copy; 2023</p>
+            </div>
+        </footer>
+
+    )
 };
