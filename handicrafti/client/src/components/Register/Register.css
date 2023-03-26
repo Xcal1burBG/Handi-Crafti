@@ -1,11 +1,12 @@
-.login {
+.register {
     color: #031a6f;
     margin-top: 80px;
     font-size: 20px;
-    
 }
 
-.login-form-container{
+.register-form-container{
+    align-items: center;
+
     margin: auto;
     width: 250px;
     background-color: #9aaced;
@@ -15,7 +16,7 @@
 
 }
 
-#login-form {
+#register-form {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -25,7 +26,7 @@
 
 
 
-.login-input {
+.register-input {
     margin: auto;
     font-size: 18px;
     display: block;
@@ -37,7 +38,7 @@
     
 }
 
-#login-submit {
+#register-submit {
 
     color: #031a6f;
     font-size: 17px;

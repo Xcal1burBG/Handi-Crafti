@@ -3,8 +3,10 @@ footer {
     background-color: #9aaced;
     display: block;
     font-size: 18px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    flex-grow: 1;
+    border-radius: 6px;
 
 
 

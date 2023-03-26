@@ -4,7 +4,7 @@ export const Header = () => {
 
     return (
         <header>
-            <Link to="/" class = "site-title">Website Header</Link>
+            <Link to="/" className="site-title">Handi-Crafti</Link>
             <nav>
                 <ul>
                     <li><Link to="/catalog">Catalog</Link></li>

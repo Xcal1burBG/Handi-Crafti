@@ -7,15 +7,12 @@ export const Login = () => {
             <div className="login-form-container">
                 <form className="login-form" action="#" method="post">
                     <label for="username">Username</label>
-                    <input type="text" id="login-username" name="username" />
+                    <input type="text" className="login-input" name="username" />
                     <label for="password">Password:</label>
-                    <input type="password" id="login-password" name="password" />
+                    <input type="password" className="login-input" name="password" />
                     <button id="login-submit" type="submit">Login</button>
                 </form>
-
             </div>
-
-
         </div>
     );
 };

@@ -1,5 +1,33 @@
+import { Offer } from "../Offer/Offer"
+import './Catalog.css';
+
 export const Catalog = () => {
     return (
-<h1>Catalog page</h1>
+
+        <div className="catalog-container">
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+            <Offer />
+        </div>
+
+
+
     )
 }
