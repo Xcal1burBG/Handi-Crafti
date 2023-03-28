@@ -1,14 +1,16 @@
 header {
     background-color: #031a6f;
+    width: 80%;
     display: inline-flex;
     font-size: 23px;
     font-weight: bold;
     justify-content: space-between;
     padding: 10px 40px;
     margin: 10px auto;
-    position: fixed;
-    z-index: 1;
-    
+    /* z-index: 1; */
+    text-align: center;
+    align-items: center;
+    border-radius: 16px;
 
 
 

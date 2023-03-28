@@ -1,25 +1,39 @@
 footer {
     color: #031a6f;
     background-color: #9aaced;
-    display: block;
     font-size: 18px;
-    position: fixed;
+    border-radius: 50px;
+    text-align: center;
+    align-items: center;
+    margin: 76px auto 0 auto;
+    width: 40%;
+    position: absolute;
     bottom: 0;
-    flex-grow: 1;
-    border-radius: 6px;
+    left: 0;
+    right: 0;
 
+}
 
-
+/* when there are more than 10 offers - footer dissapears */
+.dissapear {
+    display: none;
 
 }
 
 .footer-text-container {
+    display: block;
     width: 100%;
     text-align: center;
     align-items: center;
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 850px) {
+    footer {
+        display: none;
+    }
+}
+
+@media screen and (min-height: 1100px) {
     footer {
         display: none;
     }

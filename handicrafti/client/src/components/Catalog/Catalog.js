@@ -15,16 +15,8 @@ export const Catalog = () => {
             <Offer />
             <Offer />
             <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
+          
+           
         </div>
 
 

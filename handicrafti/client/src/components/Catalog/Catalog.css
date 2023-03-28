@@ -1,8 +1,9 @@
 .catalog-container {
-    width: 100%;
+    width: 70%;
+    min-width: 500px;
     height: 100%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
     
 }

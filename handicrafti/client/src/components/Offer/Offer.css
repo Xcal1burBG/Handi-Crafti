@@ -43,6 +43,7 @@ background-color: #f0f0fb;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: center;
 }
 
 .offer-username-image {
@@ -68,12 +69,12 @@ background-color: #f0f0fb;
 }
 
 .offer-rating-container {
-    align-items: center;
+    
     display: block;
 }
 
 .offer-rating-container {
-
+margin: auto;
 }
 
 .offer-rating {
