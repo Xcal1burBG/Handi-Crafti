@@ -7,6 +7,8 @@ import { Profile } from "./components/Profile/Profile";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { Routes, Route } from 'react-router-dom';
+import { CreateOffer } from './components/CreateOffer/CreateOffer';
+import { MyOffers } from './components/MyOffers/MyOffers';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
 
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/create" element={<CreateOffer />} />
+          <Route path="/myOffers" element={<MyOffers />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

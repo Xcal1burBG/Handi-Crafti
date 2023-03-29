@@ -8,6 +8,8 @@ export const Header = () => {
             <nav>
                 <ul>
                     <li><Link to="/catalog">Catalog</Link></li>
+                    <li><Link to="/create">Create offer</Link></li>
+                    <li><Link to="/create">My offers</Link></li>
                     <li><Link to="/profile">Profile</Link></li>
                     <li><Link to="/login">Login</Link></li>
                     <li><Link to="/register">Register</Link></li>

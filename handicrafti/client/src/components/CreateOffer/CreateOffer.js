@@ -1,10 +1,10 @@
-import './Register.css'
+import './CreateOffer.css';
 
-export const Register = () => {
+export const CreateOffer = () => {
     return (
-        <div className="register">
+        <div className="create">
             <div className="register-form-container">
-                <form className="register-form" action="#" method="post">
+                <form className="create-form" action="#" method="post">
 
                     <label for="username">Username</label>
                     <input type="text" className="register-input" name="username" />
@@ -22,5 +22,6 @@ export const Register = () => {
                 </form>
             </div>
         </div>
-    );
-};
+    )
+
+}

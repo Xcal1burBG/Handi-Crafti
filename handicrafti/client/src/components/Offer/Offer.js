@@ -17,16 +17,22 @@ export const Offer = () => {
 
             <div className="user-container">
 
-                <div className="offer-username-image">
-                    <img className="avatar-image" src="../../avatar.jpg" alt="" />
-                    <p className="offer-username">Username</p>
-                </div>
+
+                <p className="offer-username">User: Awocadoo</p>
+
 
                 <div className="offer-rating-container">
-                    <p className="offer-rating">Рейтинг</p>
-                    <p className="offer-rating-value">9.8</p>
+                    
+                    <div className="offer-rating">
+                        <p >Rating: </p>
+                    </div>
+
+                    <div className="offer-rating-value">
+                        <p >9.8</p>
+                    </div>
 
                 </div>
+
 
             </div>
 

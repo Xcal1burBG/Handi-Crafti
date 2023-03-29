@@ -1,10 +1,10 @@
-.register {
+.profile{
     color: #031a6f;
-    margin: 200px auto 270px;
-    font-size: 20px;
+    margin: 150px auto 270px;
+    font-size: 20px; 
 }
 
-.register-form-container{
+.profile-form-container{
     align-items: center;
 
     margin: auto;
@@ -12,21 +12,45 @@
     background-color: #9aaced;
     padding: 20px;
     border-radius: 16px;
-    box-shadow: 0 4px 8px 0 rgba(120, 124, 242, 0.2), 0 6px 20px 0 rgba(14, 101, 241, 0.19);
-
+    box-shadow: 0 4px 8px 0 rgba(120, 124, 242, 0.2), 0 6px 20px 0 rgba(14, 101, 241, 0.19); 
 }
 
-#register-form {
-    text-align: center;
+.profile-form{
+    /* text-align: center; */
     display: flex;
     flex-direction: column;
     margin: auto;
     padding: 15px;
 }
 
+.profile-photo{
+   display: flex;
+   flex-direction: row; 
+  
+ 
+}
 
+/* .profile-image{
+    display: block;
+    
+} */
 
-.register-input {
+/* .avatar-image{
+    
+} */
+
+.profile-photo-form{
+display: block;
+}
+#myFile {
+
+}
+
+.profile-input{
+    
+}
+
+.profile-input{
     margin: auto;
     font-size: 18px;
     display: block;
@@ -35,17 +59,18 @@
     width: 200px;
     height: 24px;
     padding: 6px; 
+}
+
+.profile-input{
     
 }
 
-#register-submit {
-
+#profile-submit{
     color: #031a6f;
     font-size: 17px;
     background-color: #9aaced;
     border-color: #031a6f;
     border-radius: 12px;
-    margin-top: 15px;
-    margin-left: 32%;
+    margin: 28px 25px 20px 25px;
     padding: 5px 15px 5px 15px;
 }
