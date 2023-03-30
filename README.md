@@ -5,7 +5,7 @@ That makes every user that wants - to become creator after creating an offer. Al
 Only registered users can create offer.
 In the offer details can be seen its full description, email and phone to contact the creator, reviews from previous consumers and average rating of the creator, 
 also list of images related to the offer.
-Every creator can see his/her own offers, to edited and delite them, to add and remove photos, to change the main photo that appear in the catalog.
+Every creator can see all his/her own offers, to edite and delete them, to add and remove photos, to change the main photo that appear in the catalog.
 Every loged user can leave a review below the offer.
 Average rating is related to the user, not the separate offer.
 Once sent review can not be changed or deleted.
