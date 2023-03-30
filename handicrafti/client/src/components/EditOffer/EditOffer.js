@@ -1,21 +1,51 @@
+import { ImageUnit } from '../ImageUnit/ImageUnit';
 import './EditOffer.css';
 
 export const EditOffer = () => {
     return (
-        <div className="offer">
+        <form className="edit">
+
+            <div className="edit-offer-text-container">
+                <input className="edit-title edit-input" value="Hardcoded title" />
 
 
-            <h2 className="offer-title">Hardcoded title </h2>
+                
+                <textarea                 type="text" 
+                className="edit-description edit-input" 
+                value="Hardcoded description" 
+                name="description"
+                rows="2" 
+                cols="50">
 
-            <p className="offer-description">Hardcoded description </p>
+                </textarea>
 
-                      <div className="image-container">
-                <img className="offer-image" src="https://portret.blog.bg/photos/91400/original/dvoika-m.jpg" alt="" />
             </div>
-               
-          
+
+            <div className="edit-all-images-container">
+                <ImageUnit />
+                <ImageUnit />
+                <ImageUnit />
+                <ImageUnit />
+                <ImageUnit />
+                <ImageUnit />
+                <ImageUnit />
+
+            </div>
 
 
-        </div>
+            <div className="edit-buttons-container">
+
+                <div className="edit-add-photo-container">
+                    <label className="edit-label-photo" htmlFor="title">Add photo</label>
+                    <input className="edit-add-photo" type="file" />
+                </div>
+
+                <button className="edit-save-submit" type="submit">Save changes</button>
+            </div>
+
+
+        </form>
+
     )
+
 }

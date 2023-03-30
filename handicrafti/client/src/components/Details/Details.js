@@ -16,12 +16,6 @@ export const Details = () => {
                 <p >Rating: 9.8</p>
             </div>
 
-
-
-
-
-
-
             <div className="details-all-images-container">
                 <ImageUnit />
                 <ImageUnit />
@@ -36,19 +30,24 @@ export const Details = () => {
 
             <div className="details-buttons-container">
 
-                <div className = "details-add-photo-container">
+                <span>Leave a review</span>
+                <span>View all reviews</span>
+
+
+                <div className="details-add-photo-container">
                     <label className="details-label-photo" htmlFor="title">Add photo</label>
                     <input className="details-add-photo" type="file" />
                 </div>
 
-
-                <button className="details-edit-submit" type="submit">Edit</button>
+                <form action="/edit">
+                    <button className="details-edit-submit" >Edit</button>
+                </form>
 
                 <button className="delete-submit" type="submit">Delete</button>
-            </div>
+            </div >
 
 
-        </div>
+        </div >
 
     )
 

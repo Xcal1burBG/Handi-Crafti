@@ -46,15 +46,17 @@
 .details-buttons-container {
     display: flex;
     flex-direction: row;
-    margin-left: 197px;
+    margin: 0px auto 0px 19px;
     align-items: center;
-    margin-top: 2px;
+    
+}
 
-
+.details-buttons-container span{
+    margin-right: 40px;
 }
 
 .details-add-photo-container{
-    margin-left: 203px;
+    margin-left: 80px;
 }
 
 .details-label-photo{
@@ -100,4 +102,5 @@ border-radius: 15px;
     margin: 12px 0px 10px 52px;
     padding: 5px 15px 5px 15px;
     margin-left: 31px;
+    
 }

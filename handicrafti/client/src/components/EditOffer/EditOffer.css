@@ -1,0 +1,95 @@
+.edit {
+    background-color: #9aaced;
+    color: #031a6f;
+    width: 800px;
+    height: 355px;
+    margin-top: 60px;
+    border-radius: 16px;
+    ;
+
+
+}
+
+.edit-offer-text-container {
+    margin: 19px 470px 20px 20px;
+}
+
+.edit-input {
+    margin-left: 20px
+}
+
+.edit-title {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    color: #031a6f;
+    border-radius: 6px;
+    width: 174px;
+    height: 20px;
+    padding: 2px; 
+}
+
+.edit-description {
+    font-size: 14px;
+    display: block;
+    color: #031a6f;
+    border-radius: 6px;
+    width: 465px;
+    height: 94px;
+    padding: 2px;
+    resize: none;
+    margin-top: 15px;
+}
+
+
+.edit-all-images-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -14px;
+    width: 100%;
+    height: 130px;
+}
+
+.edit-buttons-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 197px;
+    align-items: center;
+    margin-top: 2px;
+
+
+}
+
+.edit-add-photo-container{
+    margin-left: 203px;
+}
+
+.edit-label-photo{
+    font-size: 14px;
+}
+
+.edit-add-photo {
+display: block;
+font-size: 14px;
+border-radius: 15px;
+
+}
+
+::-webkit-file-upload-button{
+    border-radius: 8px;
+    border-color: #031a6f;
+}
+
+
+.edit-save-submit{
+    color: #031a6f;
+    margin-left: -56px;
+    display: block;
+    font-size: 14px;
+    background-color: #9aaced;
+    border-color: #031a6f;
+    border-radius: 12px;
+    padding: 5px 15px 5px 15px;
+}
+
