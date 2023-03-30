@@ -1,7 +1,7 @@
 # Handi-Crafti
 This is a React application allowing freelancers, handicraft and handmade makers to offer, and consumers to choose among their services. 
 Both types of users use same login and register form and can create offers as in my general belief every person has at least one kind of talent.
-That makes every user that wants - to become creator after creating an offer. All registered and unregistered users can browse through the catalog of offers an choose any of them. 
+That makes every user that wants - to become creator after creating an offer. All registered and unregistered users can browse through the catalog of offers and choose any of them. 
 Only registered users can create offer.
 In the offer details can be seen its full description, email and phone to contact the creator, reviews from previous consumers and average rating of the creator, 
 also list of images related to the offer.
