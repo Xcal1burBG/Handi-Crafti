@@ -51,8 +51,16 @@
     
 }
 
-.details-buttons-container span{
+.details-buttons-container a{
+    color: #031a6f;
     margin-right: 40px;
+    cursor: pointer;
+    text-decoration: none;
+    
+}
+.details-buttons-container a:visited{
+    color: #031a6f;
+
 }
 
 .details-add-photo-container{
@@ -74,6 +82,7 @@ border-radius: 15px;
 ::-webkit-file-upload-button{
     border-radius: 8px;
     border-color: #031a6f;
+    cursor: pointer;
 }
 
 
@@ -86,6 +95,7 @@ border-radius: 15px;
     border-color: #031a6f;
     border-radius: 12px;
     padding: 5px 15px 5px 15px;
+    cursor: pointer;
 }
 
 
@@ -102,5 +112,6 @@ border-radius: 15px;
     margin: 12px 0px 10px 52px;
     padding: 5px 15px 5px 15px;
     margin-left: 31px;
+    cursor: pointer;
     
 }

@@ -11,6 +11,8 @@ import { CreateOffer } from './components/CreateOffer/CreateOffer';
 import { MyOffers } from './components/MyOffers/MyOffers';
 import { Details } from './components/Details/Details';
 import { EditOffer } from './components/EditOffer/EditOffer';
+import { PostReview } from './components/PostReview/PostReview';
+import { Reviews } from './components/Reviews/Reviews';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/create" element={<CreateOffer />} />
           <Route path="/myoffers" element={<MyOffers />} />
           <Route path="/details" element={<Details />} />
+          <Route path="/postreview" element={<PostReview />} />
+          <Route path="/reviews" element={<Reviews />} />
           <Route path="/edit" element={<EditOffer />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />

@@ -25,4 +25,3 @@ export const CreateOffer = () => {
 
 }
 
-// box-shadow: 0 0 15px 0 #90a0af;

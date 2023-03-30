@@ -30,8 +30,8 @@ export const Details = () => {
 
             <div className="details-buttons-container">
 
-                <span>Leave a review</span>
-                <span>View all reviews</span>
+                <a href="/postreview">Leave a review</a>
+                <a href= "/reviews" >View all reviews</a>
 
 
                 <div className="details-add-photo-container">
