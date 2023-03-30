@@ -5,8 +5,11 @@
     width: 88px;
     height: 202px;
     padding: 10px 12px 0px 12px;
-    justify-content: center;
   
+}
+
+.details-image-text-container span{
+    cursor: pointer;
 }
 
 
@@ -23,6 +26,8 @@ display: block
     display: block;
     overflow: hidden;
     display: block;
+    border: 2px solid #031a6f;
+
 }
 
 .make-main{

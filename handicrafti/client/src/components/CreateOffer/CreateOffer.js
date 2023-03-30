@@ -13,7 +13,7 @@ export const CreateOffer = () => {
                     <textarea type="text" className="create-input create-description" name="description">
                     </textarea>
 
-                    <label htmlFor="title">Upload photo</label>
+                    <label htmlFor="title">Upload main photo</label>
                     <input className = "create-photo-upload" type="file" id="file-upload"/>
                     
                    

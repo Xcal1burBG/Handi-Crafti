@@ -5,24 +5,22 @@ export const Details = () => {
     return (
         <div className="details">
 
-            <p className="details-title">Hardcoded title </p>
+            <div className="details-offer-text-container">
+                <p className="details-title">Hardcoded title </p>
 
 
-            <p className="details-description">Hardcoded description, Hardcoded description, Hardcoded description, Hardcoded description </p>
-
-            <div className="details-user-container">
+                <p className="details-description">Hardcoded description, Hardcoded description, Hardcoded description, Hardcoded description </p>
 
                 <p className="details-username">User: Awocadoo</p>
 
-                <div className="details-rating-container">
-
-                    <div className="details-rating">
-                        <p >Rating: 9.8</p>
-                    </div>
-
-                </div>
-
+                <p >Rating: 9.8</p>
             </div>
+
+
+
+
+
+
 
             <div className="details-all-images-container">
                 <ImageUnit />
@@ -32,8 +30,22 @@ export const Details = () => {
                 <ImageUnit />
                 <ImageUnit />
                 <ImageUnit />
-               
-                           </div>
+
+            </div>
+
+
+            <div className="details-buttons-container">
+
+                <div className = "details-add-photo-container">
+                    <label className="details-label-photo" htmlFor="title">Add photo</label>
+                    <input className="details-add-photo" type="file" />
+                </div>
+
+
+                <button className="details-edit-submit" type="submit">Edit</button>
+
+                <button className="delete-submit" type="submit">Delete</button>
+            </div>
 
 
         </div>

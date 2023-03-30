@@ -17,7 +17,8 @@ background-color: #f0f0fb;
     height: 35%;
     display: inline-block;
     overflow: hidden;
-    text-align: center
+    text-align: center;
+    border: 2px solid #031a6f;
 }
 
 
@@ -29,6 +30,7 @@ background-color: #f0f0fb;
     object-fit: cover;
     background: white;
     align-items: center;
+    
 
 }
 

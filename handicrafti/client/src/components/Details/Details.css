@@ -2,49 +2,102 @@
     background-color: #9aaced;
     color: #031a6f;
     width: 800px;
-    height: 400px;
+    height: 355px;
     margin-top: 60px;
-    border-radius: 16px;;
+    border-radius: 16px;
+    ;
 
-   
-}
-
-.details-title{
-font-weight: bold;
-}
-
-.details-description{
-    
-}
-
-.details-user-container{
-    
-}
-
-.details-username{
-    
-}
-
-.details-rating-container{
-    
-}
-
-.details-rating{
 
 }
 
-.details-all-images-container{
+.details-offer-text-container {
+    padding-left: 18px;
+}
+
+.details-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.details-description {}
+
+.details-user-container {}
+
+.details-username {
+    margin-bottom: -8px;
+
+}
+
+.details-rating-container {}
+
+.details-rating {}
+
+.details-all-images-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: -14px;
     width: 100%;
     height: 100%;
+    height: 130px;
 }
 
-.details-buttons-container{
+.details-buttons-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 197px;
+    align-items: center;
+    margin-top: 2px;
+
 
 }
 
+.details-add-photo-container{
+    margin-left: 203px;
+}
+
+.details-label-photo{
+    font-size: 14px;
+}
+
+.details-add-photo {
+display: block;
+font-size: 14px;
+border-radius: 10px;
+border-radius: 15px;
+
+}
+
+::-webkit-file-upload-button{
+    border-radius: 8px;
+    border-color: #031a6f;
+}
 
 
+.details-edit-submit{
+    color: #031a6f;
+    margin-left: -56px;
+    display: block;
+    font-size: 14px;
+    background-color: #9aaced;
+    border-color: #031a6f;
+    border-radius: 12px;
+    padding: 5px 15px 5px 15px;
+}
+
+
+.delete-submit {
+    color: rgb(225, 77, 77);
+    border-color: rgb(225, 77, 77);
+    font-weight: bold;
+    border-style: solid;
+    display: block;
+    font-size: 14px;
+    background-color: #9aaced;
+    border-color: #031a6f;
+    border-radius: 12px;
+    margin: 12px 0px 10px 52px;
+    padding: 5px 15px 5px 15px;
+    margin-left: 31px;
+}

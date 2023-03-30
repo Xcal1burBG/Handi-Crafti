@@ -12,12 +12,8 @@ export const ImageUnit = () => {
 
                 </div>
 
-                <p className="make-main">Make main</p>
-                <p className="details-delete-photo">Delete photo</p>
-
-            </div>
-
-            <div className="details-buttons-container">
+                <span type="text" className="make-main">Make main</span>
+                <span type="text" className="details-delete-photo">Delete photo</span>
 
             </div>
 
