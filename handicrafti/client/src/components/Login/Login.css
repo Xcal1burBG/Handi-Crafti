@@ -1,16 +1,16 @@
 .login {
     color: #031a6f;
     margin-top: 80px;
-    font-size: 20px;
-    margin: 250px auto 270px;
+    font-size: 16px;
+    margin: 100px auto 217px;
     
 }
 
 .login-form-container{
     margin: auto;
-    width: 250px;
+    width: 180px;
     background-color: #9aaced;
-    padding: 20px;
+    padding: 8px 20px 8px 20px;
     border-radius: 16px;
     box-shadow: 0 4px 8px 0 rgba(120, 124, 242, 0.2), 0 6px 20px 0 rgba(14, 101, 241, 0.19);
 
@@ -28,24 +28,23 @@
 
 .login-input {
     margin: auto;
-    font-size: 18px;
+    font-size: 14px;
     display: block;
     color: #031a6f;
     border-radius: 6px;
-    width: 200px;
-    height: 24px;
-    padding: 6px; 
+    width: 174px;
+    height: 20px;
+    padding: 2px; 
     
 }
 
 #login-submit {
 
     color: #031a6f;
-    font-size: 17px;
+    font-size: 14px;
     background-color: #9aaced;
     border-color: #031a6f;
     border-radius: 12px;
-    margin-top: 15px;
-    margin-left: 35%;
+    margin: 12px 0px 10px 58px;
     padding: 5px 15px 5px 15px;
 }

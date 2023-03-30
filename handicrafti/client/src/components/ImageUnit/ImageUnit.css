@@ -1,0 +1,39 @@
+.details-image-text-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 88px;
+    height: 202px;
+    padding: 10px 12px 0px 12px;
+    justify-content: center;
+  
+}
+
+
+.details-image-unit-container{
+    width: 100px;
+    height: 60px;
+    
+display: block
+}
+
+.details-image-unit{
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    display: block;
+}
+
+.make-main{
+    display: block;
+    margin: 10px auto 2px;
+}
+
+.details-delete-photo{
+    color: rgb(225, 77, 77);
+    font-size: 14px;
+    display: block;
+    margin: 0px auto 2px;
+}
+

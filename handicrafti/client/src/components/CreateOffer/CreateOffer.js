@@ -3,25 +3,26 @@ import './CreateOffer.css';
 export const CreateOffer = () => {
     return (
         <div className="create">
-            <div className="register-form-container">
+            <div className="create-form-container">
                 <form className="create-form" action="#" method="post">
 
-                    <label for="username">Username</label>
-                    <input type="text" className="register-input" name="username" />
+                    <label htmlFor="title">Title</label>
+                    <input type="text" className="create-input" name="username" />
 
-                    <label for="username">Email</label>
-                    <input type="text" className="register-input" name="email" />
+                    <label htmlFor="description">Description</label>
+                    <textarea type="text" className="create-input create-description" name="description">
+                    </textarea>
 
-                    <label for="password">Password:</label>
-                    <input type="password" className="register-input" name="password" />
-
-                    <label for="repass">Repeat password:</label>
-                    <input type="password" className="register-input" name="password" />
-
-                    <button id="register-submit" type="submit">Register</button>
+                    <label htmlFor="title">Upload photo</label>
+                    <input className = "create-photo-upload" type="file" id="file-upload"/>
+                    
+                   
+                    <button id="create-submit" type="submit">Create</button>
                 </form>
             </div>
         </div>
     )
 
 }
+
+// box-shadow: 0 0 15px 0 #90a0af;

@@ -1,22 +1,22 @@
-.register {
+.create {
     color: #031a6f;
-    margin: 200px auto 270px;
-    font-size: 20px;
+    margin: 80px auto 217px;
+    font-size: 16px;
 }
 
-.register-form-container{
+.create-form-container{
     align-items: center;
 
     margin: auto;
-    width: 250px;
+    width: 180px;
     background-color: #9aaced;
-    padding: 20px;
+    padding: 8px 20px 8px 20px;
     border-radius: 16px;
     box-shadow: 0 4px 8px 0 rgba(120, 124, 242, 0.2), 0 6px 20px 0 rgba(14, 101, 241, 0.19);
 
 }
 
-#register-form {
+#create-form {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -25,27 +25,41 @@
 }
 
 
+element.style {
 
-.register-input {
+}
+
+
+.create-input {
     margin: auto;
-    font-size: 18px;
+    font-size: 14px;
     display: block;
     color: #031a6f;
     border-radius: 6px;
-    width: 200px;
-    height: 24px;
-    padding: 6px; 
-    
+    width: 174px;
+    height: 20px;
+    padding: 2px;
 }
 
-#register-submit {
+.create-description {
+    resize: none;
+    height: 100px;
+}
 
+.create-photo-upload{
+        font-size: 15px;
+}
+
+#file-upload{
+border-radius: 10px;
+}
+
+#create-submit {
     color: #031a6f;
-    font-size: 17px;
+    font-size: 14px;
     background-color: #9aaced;
     border-color: #031a6f;
     border-radius: 12px;
-    margin-top: 15px;
-    margin-left: 32%;
+    margin: 12px 0px 10px 52px;
     padding: 5px 15px 5px 15px;
 }

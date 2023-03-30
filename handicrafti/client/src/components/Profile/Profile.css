@@ -1,22 +1,21 @@
 .profile{
     color: #031a6f;
-    margin: 150px auto 270px;
-    font-size: 20px; 
+    margin: 80px auto 170px;
+    font-size: 16px; 
 }
 
 .profile-form-container{
     align-items: center;
 
     margin: auto;
-    width: 250px;
+    width: 180px;
     background-color: #9aaced;
-    padding: 20px;
+    padding: 8px 34px 8px 6px;
     border-radius: 16px;
     box-shadow: 0 4px 8px 0 rgba(120, 124, 242, 0.2), 0 6px 20px 0 rgba(14, 101, 241, 0.19); 
 }
 
 .profile-form{
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -42,23 +41,31 @@
 .profile-photo-form{
 display: block;
 }
+
 #myFile {
 
 }
 
 .profile-input{
-    
+     margin: auto;
+    font-size: 14px;
+    display: block;
+    color: #031a6f;
+    border-radius: 6px;
+    width: 174px;
+    height: 20px;
+    padding: 2px;
 }
 
 .profile-input{
     margin: auto;
-    font-size: 18px;
+    font-size: 14px;
     display: block;
     color: #031a6f;
     border-radius: 6px;
-    width: 200px;
-    height: 24px;
-    padding: 6px; 
+    width: 174px;
+    height: 20px;
+    padding: 2px; 
 }
 
 .profile-input{
@@ -67,10 +74,10 @@ display: block;
 
 #profile-submit{
     color: #031a6f;
-    font-size: 17px;
+    font-size: 14px;
     background-color: #9aaced;
     border-color: #031a6f;
     border-radius: 12px;
-    margin: 28px 25px 20px 25px;
+    margin: 15px 0px 0px 27px;
     padding: 5px 15px 5px 15px;
 }

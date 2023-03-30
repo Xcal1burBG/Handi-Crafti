@@ -1,0 +1,50 @@
+.details {
+    background-color: #9aaced;
+    color: #031a6f;
+    width: 800px;
+    height: 400px;
+    margin-top: 60px;
+    border-radius: 16px;;
+
+   
+}
+
+.details-title{
+font-weight: bold;
+}
+
+.details-description{
+    
+}
+
+.details-user-container{
+    
+}
+
+.details-username{
+    
+}
+
+.details-rating-container{
+    
+}
+
+.details-rating{
+
+}
+
+.details-all-images-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -14px;
+    width: 100%;
+    height: 100%;
+}
+
+.details-buttons-container{
+
+}
+
+
+

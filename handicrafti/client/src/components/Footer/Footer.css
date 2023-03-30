@@ -1,7 +1,7 @@
 footer {
     color: #031a6f;
     background-color: #9aaced;
-    font-size: 18px;
+    font-size: 13px;
     border-radius: 50px;
     text-align: center;
     align-items: center;
@@ -27,13 +27,17 @@ footer {
     align-items: center;
 }
 
-@media screen and (max-height: 850px) {
+.footer-text-container p{
+    margin: 3px 0px 3px 0px;
+}
+
+@media screen and (max-height: 580px) {
     footer {
         display: none;
     }
 }
 
-@media screen and (min-height: 1100px) {
+@media screen and (min-height: 750px) {
     footer {
         display: none;
     }

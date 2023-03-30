@@ -1,0 +1,9 @@
+.myoffers-container {
+    width: 65%;
+    min-width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}

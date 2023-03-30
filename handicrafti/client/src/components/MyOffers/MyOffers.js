@@ -3,7 +3,7 @@ import { Offer } from '../Offer/Offer';{}
 
 export const MyOffers = () => {
 return (
-    <div className="catalog-container">
+    <div className="myoffers-container">
             <Offer />
             <Offer />
             <Offer />
@@ -14,8 +14,7 @@ return (
             <Offer />
             <Offer />
             <Offer />
-          
-           
+                     
         </div>
 )
 }
