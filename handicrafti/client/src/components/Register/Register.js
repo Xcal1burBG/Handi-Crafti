@@ -1,10 +1,14 @@
 import './Register.css'
 
 export const Register = () => {
+
+    const registerUser = () => {
+        
+    }
     return (
         <div className="register">
             <div className="register-form-container">
-                <form className="register-form" action="#" method="post">
+                <form className="register-form" method="post" onSubmit={registerUser}>
 
                     <label for="username">Username</label>
                     <input type="text" className="register-input" name="username" />
@@ -12,13 +16,13 @@ export const Register = () => {
                     <label for="email">Email</label>
                     <input type="text" className="register-input" name="email" />
 
-                    <label for="phoneNumber">PhoneNumber</label>
+                    <label for="phoneNumber">Phone number</label>
                     <input type="text" className="register-input" name="phoneNumber" />
 
-                    <label for="password">Password:</label>
+                    <label for="password">Password</label>
                     <input type="password" className="register-input" name="password" />
 
-                    <label for="repass">Repeat password:</label>
+                    <label for="repass">Repeat password</label>
                     <input type="password" className="register-input" name="repass" />
 
                     <button id="register-submit" type="submit">Register</button>
