@@ -1,0 +1,22 @@
+.reviews-container{
+    color: #031a6f;
+    margin: 60px;
+    
+    
+}
+
+.reviews-title{
+    background-color: #9aaced;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+
+}
+
+.reviews-title span{
+    margin-bottom: 20px;
+}
+
+.review-items-container {
+    margin-top: 40px;
+}

@@ -3,8 +3,8 @@ import './ReviewItem.css';
 export const ReviewItem = () => {
     return (
         <div className = "review-item">
-            <span>Harcoded review description Harcoded review description Harcoded review description</span>
-           <span>Rating: 8</span>
+            <span className='review-item-text'>This fokin motherfoker did nothing, just got the money and dissapeared!!!</span>
+            <span className='review-item-rating'>Rating: 0</span>
 
 
           

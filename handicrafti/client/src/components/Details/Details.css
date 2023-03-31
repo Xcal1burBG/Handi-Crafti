@@ -20,18 +20,55 @@
     margin-bottom: 5px;
 }
 
-.details-description {}
+.details-description {
+    margin: 13px 0px 0px 0px;
+}
 
-.details-user-container {}
+.details-user-container {
+
+}
+
+.details-user-contacts-container{
+    display: flex;
+
+
+}
+
+.details-user-contacts-container p{
+    margin-top: 16px;
+    margin-right: 16px;
+}
 
 .details-username {
+    display: block;
     margin-bottom: -8px;
 
 }
 
+.details-username{
+    display: block;
+}
+
+.details-contacts{
+   display: block; 
+}
+
+.details-phone{
+    display: block;
+}
+                    
+.details-email{
+    display: block;
+}
+
+
 .details-rating-container {}
 
-.details-rating {}
+.details-rating {
+    margin-top: 0px;
+}
+
+
 
 .details-all-images-container {
     display: flex;

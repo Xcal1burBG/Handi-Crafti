@@ -11,9 +11,15 @@ export const Details = () => {
 
                 <p className="details-description">Hardcoded description, Hardcoded description, Hardcoded description, Hardcoded description </p>
 
-                <p className="details-username">User: Awocadoo</p>
+                <div className="details-user-contacts-container">
 
-                <p >Rating: 9.8</p>
+                    <p className="details-username">User: Awocadoo</p>
+                    <p className="details-contacts">Contact with user:</p>
+                    <p className="details-phone">Phone: 0886552870</p>
+                    <p className="details-email">Email: ivalkov79@abv.bg</p>
+                </div>
+
+                <p className="details-rating">Rating: 9.8</p>
             </div>
 
             <div className="details-all-images-container">
@@ -31,12 +37,12 @@ export const Details = () => {
             <div className="details-buttons-container">
 
                 <a href="/postreview">Leave a review</a>
-                <a href= "/reviews" >View all reviews</a>
+                <a href="/reviews" >View all reviews</a>
 
 
                 <div className="details-add-photo-container">
-                    <label className="details-label-photo" htmlFor="title">Add photo</label>
-                    <input className="details-add-photo" type="file" />
+                    <label className="details-label-photo" htmlFor="photo">Add photo</label>
+                    <input className="details-add-photo" type="file" name="photo"/>
                 </div>
 
                 <form action="/edit">

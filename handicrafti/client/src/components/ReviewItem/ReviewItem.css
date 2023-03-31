@@ -1,0 +1,26 @@
+.review-item{
+    color: #031a6f;
+    background-color: #9aaced;
+    margin: 18px auto 15px;
+    padding: 15px;
+    border-radius: 12px;
+    width: 70%;
+    
+}
+
+.review-item span{
+    display: block;
+}
+
+.review-item-text{
+    
+   
+
+    
+}
+
+.review-item-rating{
+    
+font-weight: bold;
+    
+}

@@ -1,10 +1,10 @@
-.create {
+.postreview {
     color: #031a6f;
     margin: 80px auto 217px;
     font-size: 16px;
 }
 
-.create-form-container{
+.postreview-form-container{
     align-items: center;
 
     margin: auto;
@@ -16,7 +16,7 @@
 
 }
 
-#create-form {
+#postreview-form {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -24,13 +24,10 @@
     padding: 15px;
 }
 
-
-element.style {
-
+.postreview-user{
+display: block;
 }
-
-
-.create-input {
+.postreview-input {
     margin: auto;
     font-size: 14px;
     display: block;
@@ -41,20 +38,21 @@ element.style {
     padding: 2px;
 }
 
-.create-description {
+.postreview-description {
     resize: none;
     height: 100px;
 }
 
-.create-photo-upload{
+.postreview-photo-upload{
         font-size: 15px;
 }
 
-#file-upload{
-border-radius: 10px;
+.postreview-rating-input{
+    border-radius: 6px;
+    width: 174px;   
 }
 
-#create-submit {
+#postreview-submit {
     color: #031a6f;
     font-size: 14px;
     background-color: #9aaced;
@@ -63,4 +61,7 @@ border-radius: 10px;
     margin: 12px 0px 10px 52px;
     padding: 5px 15px 5px 15px;
     cursor: pointer;
+
+
+    
 }

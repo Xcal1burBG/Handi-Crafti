@@ -24,14 +24,14 @@ export const Profile = () => {
 
 
 
-                    <label for="username">Change email</label>
+                    <label for="email">Change email</label>
                     <input type="text" className="profile-input" name="email" />
 
                     <label for="password">Change password</label>
                     <input type="password" className="profile-input" name="password" />
 
                     <label for="repass">Repeat password</label>
-                    <input type="password" className="register-input" name="password" />
+                    <input type="password" className="register-input" name="repass" />
 
                     <button id="profile-submit" type="submit">Save changes</button>
                 </form>
