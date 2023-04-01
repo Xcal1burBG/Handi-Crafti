@@ -31,7 +31,7 @@ footer {
     margin: 3px 0px 3px 0px;
 }
 
-@media screen and (max-height: 580px) {
+@media screen and (max-height: 645px) {
     footer {
         display: none;
     }

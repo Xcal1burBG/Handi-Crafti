@@ -13,8 +13,22 @@ import { Details } from './components/Details/Details';
 import { EditOffer } from './components/EditOffer/EditOffer';
 import { PostReview } from './components/PostReview/PostReview';
 import { Reviews } from './components/Reviews/Reviews';
+import { useEffect, useState } from 'react';
+import * as offerService from './services/offerService';
 
 function App() {
+  const [offers, setOffers] = useState([]);
+
+  useEffect(() => {
+    offerService.getAll()
+      .then(result => {
+        setOffers(result);
+      })
+  });
+
+
+
+
   return (
     <div className="App">
 

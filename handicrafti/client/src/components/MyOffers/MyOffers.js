@@ -1,7 +1,10 @@
 import './MyOffers.css';
-import { Offer } from '../Offer/Offer';{}
+import { Offer } from '../Offer/Offer';
+
 
 export const MyOffers = () => {
+
+
 return (
     <div className="myoffers-container">
             <Offer />

@@ -1,5 +1,6 @@
 import { ImageUnit } from '../ImageUnit/ImageUnit';
 import './Details.css';
+import * as reviewService from '../../services/reviewService';
 
 export const Details = () => {
     return (
