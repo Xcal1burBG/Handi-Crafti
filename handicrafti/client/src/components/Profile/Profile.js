@@ -6,8 +6,6 @@ export const Profile = () => {
             <div className="profile-form-container">
                 <form className="profile-form" action="#" method="post">
 
-<p>Dear, username, here you can change your details</p>
-
                     {/* <div className="profile-photo">
                         <div className="profile-image">
                             <img className="avatar-image" src="../../avatar.jpg" alt="" />
@@ -26,6 +24,10 @@ export const Profile = () => {
 
                     <label for="email">Change email</label>
                     <input type="text" className="profile-input" name="email" />
+
+                    <label for="phoneNumber">Change phone number</label>
+                    <input type="text" className="profile-input" name="email" />
+                
 
                     <label for="password">Change password</label>
                     <input type="password" className="profile-input" name="password" />
