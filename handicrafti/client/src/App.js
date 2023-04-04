@@ -15,6 +15,7 @@ import { PostReview } from './components/PostReview/PostReview';
 import { Reviews } from './components/Reviews/Reviews';
 import { useEffect, useState } from 'react';
 import * as offerService from './services/offerService';
+import { AuthProvider } from './Contexts/AuthContext';
 
 function App() {
   const [offers, setOffers] = useState([]);
@@ -24,38 +25,40 @@ function App() {
       .then(result => {
         setOffers(result);
       })
-  });
+  }, []);
 
 
 
 
   return (
-    <div className="App">
+    <AuthProvider>
+      <div className="App">
 
-      <Header />
-      <main>
+        <Header />
+        <main>
 
-        <Routes>
+          <Routes>
 
-          <Route path="/" element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/create" element={<CreateOffer />} />
-          <Route path="/myoffers" element={<MyOffers />} />
-          <Route path="/details" element={<Details />} />
-          <Route path="/postreview" element={<PostReview />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/edit" element={<EditOffer />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/create" element={<CreateOffer />} />
+            <Route path="/myoffers" element={<MyOffers />} />
+            <Route path="/details" element={<Details />} />
+            <Route path="/postreview" element={<PostReview />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/edit" element={<EditOffer />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
 
-        </Routes>
+          </Routes>
 
 
-      </main>
-      <Footer />
+        </main>
+        <Footer />
 
-    </div>
+      </div>
+    </AuthProvider>
   );
 }
 
