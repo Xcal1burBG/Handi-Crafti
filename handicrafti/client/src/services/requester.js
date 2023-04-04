@@ -60,4 +60,4 @@ export const requestFactory = (token) => {
 
 };
 
-export const request = requestFactory(localStorage.getItem('auth'));
+export const request = (token) => requestFactory(token ?? localStorage.getItem('auth'));

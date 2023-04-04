@@ -16,6 +16,7 @@ import { Reviews } from './components/Reviews/Reviews';
 import { useEffect, useState } from 'react';
 import * as offerService from './services/offerService';
 import { AuthProvider } from './Contexts/AuthContext';
+import { NotFound } from './components/NotFound/NotFound';
 
 function App() {
   const [offers, setOffers] = useState([]);
@@ -50,6 +51,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path ="*" element={<NotFound />} />
 
           </Routes>
 

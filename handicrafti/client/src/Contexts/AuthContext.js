@@ -28,20 +28,20 @@ export const AuthProvider = ({
       };
 
     const onRegisterSubmit = async (values) => {
-        const { confirmPassword, ...registerData } = values;
-        if (confirmPassword !== registerData.password) {
+               
+        if (values.password !== values.repass) {
             return;
         }
 
         try {
-            const result = await authService.register(registerData);
+            
+            const result = await authService.register(values);
 
-            console.log(result);
             setAuth(result);
 
             navigate('/catalog');
         } catch (error) {
-            console.log('There is problem');
+            console.log('There is problem in AuthContext on register');
         }
     };
 

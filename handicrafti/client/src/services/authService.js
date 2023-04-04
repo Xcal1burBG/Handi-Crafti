@@ -1,13 +1,12 @@
 import {requestFactory} from './requester';
-
-const baseUrl = 'http://localhost:3030/users';
+import { baseUrl } from '../config/config';
 
 
 export const authServiceFactory = (token) => {
     const request = requestFactory(token);
     return {
-       login: (loginData) => request.post(`${baseUrl}/login`, loginData),
-       register: (data) => request.post(`${baseUrl}/register`, data),
+       login: (data) => request.post(`${baseUrl}/login`, data),
+       register: (data) => request.post(`${baseUrl}/users/register`, data),
        logout: () => request.get(`${baseUrl}/logout`)
     }
 
