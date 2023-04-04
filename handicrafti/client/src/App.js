@@ -28,6 +28,7 @@ function App() {
   const [offers, setOffers] = useState([]);
   const offerService = offerServiceFactory();
 
+
   useEffect(() => {
     offerService.getAll()
       .then(result => {
@@ -48,9 +49,9 @@ function App() {
           <Routes>
 
             <Route path="/" element={<Home />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/create" element={<CreateOffer />} />
-            <Route path="/myoffers" element={<MyOffers />} />
+            <Route path="offers/catalog" element={<Catalog />} offers = {offers}/>
+            <Route path="offers/create" element={<CreateOffer />} />
+            <Route path={`offers/${userId}`} element={<MyOffers />} />
             <Route path="/details" element={<Details />} />
             <Route path="/postreview" element={<PostReview />} />
             <Route path="/reviews" element={<Reviews />} />
