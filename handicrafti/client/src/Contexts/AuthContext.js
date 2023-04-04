@@ -34,7 +34,6 @@ export const AuthProvider = ({
         }
 
         try {
-            
             const result = await authService.register(values);
 
             setAuth(result);

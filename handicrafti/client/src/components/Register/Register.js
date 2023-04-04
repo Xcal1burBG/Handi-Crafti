@@ -21,7 +21,7 @@ export const Register = () => {
     return (
         <div className="register">
             <div className="register-form-container">
-                <form className="register-form" method="POST" onSubmit={onSubmit}>
+                <form className="register-form" method="POST" action = "users/register" onSubmit={onSubmit}>
 
                     <label htmlFor="username">Username</label>
                     <input type="text" className="register-input" name="username" value={values.username} onChange={changeHandler} />

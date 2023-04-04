@@ -7,3 +7,15 @@
     flex-wrap: wrap;
     
 }
+
+.no-articles{
+    color: #031a6f;
+    background-color: #9aaced;
+    justify-content: center;
+    border-radius: 16px;
+    margin-top: 120px;
+    margin-left: 36%;
+    width: 30%;
+    text-align: center;
+    padding: 20px;
+}

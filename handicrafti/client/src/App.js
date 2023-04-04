@@ -1,4 +1,7 @@
 import './App.css';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
@@ -6,20 +9,24 @@ import { Catalog } from "./components/Catalog/Catalog";
 import { Profile } from "./components/Profile/Profile";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
-import { Routes, Route } from 'react-router-dom';
 import { CreateOffer } from './components/CreateOffer/CreateOffer';
 import { MyOffers } from './components/MyOffers/MyOffers';
 import { Details } from './components/Details/Details';
 import { EditOffer } from './components/EditOffer/EditOffer';
 import { PostReview } from './components/PostReview/PostReview';
 import { Reviews } from './components/Reviews/Reviews';
-import { useEffect, useState } from 'react';
-import * as offerService from './services/offerService';
+
 import { AuthProvider } from './Contexts/AuthContext';
 import { NotFound } from './components/NotFound/NotFound';
+import { offerServiceFactory } from './services/offerService'
+
+
 
 function App() {
+
+  const navigate = useNavigate();
   const [offers, setOffers] = useState([]);
+  const offerService = offerServiceFactory();
 
   useEffect(() => {
     offerService.getAll()
