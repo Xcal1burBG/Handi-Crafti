@@ -13,8 +13,8 @@ export const Login = () => {
     }, onLoginSubmit);
     return (
         <div className="login">
-            <div className="login-form-container" method="POST" action="users/login" onSubmit={onSubmit}>
-                <form className="login-form" action="#" method="post">
+            <div className="login-form-container"  >
+                <form className="login-form" action="users/login" method="POST" onSubmit={onSubmit}>
                     <label htmlFor="username">Username</label>
                     <input type="text" className="login-input" name="username" value={values.username} onChange={changeHandler} />
                     <label htmlFor="password">Password</label>

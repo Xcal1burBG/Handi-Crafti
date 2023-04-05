@@ -21,7 +21,7 @@ const requester = async (method, token, url, data) => {
         }
     };
 
-    const response = await fetch(url, options);
+       const response = await fetch(url, options);
 
     if (response.status === 204) {
         return {};
@@ -44,7 +44,7 @@ export const requestFactory = (token) => {
     if (!token) {
         const serializedAuth = localStorage.getItem('auth');
 
-        if(serializedAuth){
+        if (serializedAuth) {
             const auth = JSON.parse(serializedAuth);
             token = auth.accessToken;
         }

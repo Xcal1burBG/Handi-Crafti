@@ -6,6 +6,7 @@ import { AuthContext } from '../../Contexts/AuthContext';
 
 export const Header = () => {
     const { isAuthenticated } = useContext(AuthContext);
+    console.log(isAuthenticated);
 
     return (
         <header>
@@ -22,7 +23,7 @@ export const Header = () => {
                             <li><Link to="/">Logout</Link></li>
                         </>
                     }
-                    
+
                     {
                         !isAuthenticated &&
                         <>

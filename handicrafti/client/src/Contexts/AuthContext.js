@@ -16,9 +16,10 @@ export const AuthProvider = ({
 
     const authService = authServiceFactory(auth.accessToken);
 
-    const onLoginSubmit = async (data) => {
+    const onLoginSubmit = async (values) => {
         try {
-            const result = await authService.login(data);
+            const result = await authService.login(values);
+            
             setAuth(result);
             navigate('/offers/catalog');
         } catch (error) {
