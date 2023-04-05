@@ -19,6 +19,7 @@ import { AuthProvider, AuthContext } from './Contexts/AuthContext';
 import { NotFound } from './components/NotFound/NotFound';
 import { useContext } from 'react';
 import { OfferContext } from './Contexts/OfferContext';
+import { Logout } from './components/Logout/Logout';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path ="*" element={<NotFound />} />
 
           </Routes>

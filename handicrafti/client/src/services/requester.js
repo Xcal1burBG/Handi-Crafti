@@ -46,7 +46,7 @@ export const requestFactory = (token) => {
 
         if (serializedAuth) {
             const auth = JSON.parse(serializedAuth);
-            token = auth.accessToken;
+            token = auth.token;
         }
     };
 

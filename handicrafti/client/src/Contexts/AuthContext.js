@@ -13,8 +13,7 @@ export const AuthProvider = ({
     const [auth, setAuth] = useLocalStorage('auth', {});
     const navigate = useNavigate();
 
-
-    const authService = authServiceFactory(auth.accessToken);
+    const authService = authServiceFactory(auth.token);
 
     const onLoginSubmit = async (values) => {
         try {
@@ -56,9 +55,9 @@ export const AuthProvider = ({
         onRegisterSubmit,
         onLogout,
         userId: auth._id,
-        token: auth.accessToken,
+        token: auth.token,
         userEmail: auth.email,
-        isAuthenticated: !!auth.accessToken
+        isAuthenticated: !!auth.token
 
     };
 

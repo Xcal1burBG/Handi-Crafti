@@ -14,7 +14,7 @@ export const OfferProvider = ({
     const navigate = useNavigate();
 
     const auth = useContext(AuthContext);
-    const offerService = offerServiceFactory(auth.accessToken);
+    const offerService = offerServiceFactory(auth.token);
 
     useEffect(() => {
         offerService.getAll()
@@ -26,9 +26,9 @@ export const OfferProvider = ({
 
     const contextValues = {
         userId: auth._id,
-        token: auth.accessToken,
+        token: auth.token,
         userEmail: auth.email,
-        isAuthenticated: !!auth.accessToken
+        isAuthenticated: !!auth.token
     };
 
     return (
