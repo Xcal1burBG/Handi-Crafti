@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { authServiceFactory } from '../services/authService';
@@ -9,7 +9,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({
     children
 }) => {
-    
+
     const [auth, setAuth] = useLocalStorage('auth', {});
     const navigate = useNavigate();
 
@@ -18,17 +18,17 @@ export const AuthProvider = ({
 
     const onLoginSubmit = async (data) => {
         try {
-          const result = await authService.login(data);
-          setAuth(result);
-          navigate('/catalog');
+            const result = await authService.login(data);
+            setAuth(result);
+            navigate('/offers/catalog');
         } catch (error) {
-          console.log('problem');
+            console.log('problem');
         }
-    
-      };
+
+    };
 
     const onRegisterSubmit = async (values) => {
-               
+
         if (values.password !== values.repass) {
             return;
         }
@@ -38,7 +38,7 @@ export const AuthProvider = ({
 
             setAuth(result);
 
-            navigate('/catalog');
+            navigate('/offers/catalog');
         } catch (error) {
             console.log('There is problem in AuthContext on register');
         }
@@ -71,7 +71,7 @@ export const AuthProvider = ({
 };
 
 export const useAuthContext = () => {
-const context = useContext(AuthContext);
+    const context = useContext(AuthContext);
 
-return context;
+    return context;
 };

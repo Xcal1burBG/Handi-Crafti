@@ -1,6 +1,5 @@
 import './App.css';
-import { Routes, Route, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
@@ -16,26 +15,16 @@ import { EditOffer } from './components/EditOffer/EditOffer';
 import { PostReview } from './components/PostReview/PostReview';
 import { Reviews } from './components/Reviews/Reviews';
 
-import { AuthProvider } from './Contexts/AuthContext';
+import { AuthProvider, AuthContext } from './Contexts/AuthContext';
 import { NotFound } from './components/NotFound/NotFound';
-import { offerServiceFactory } from './services/offerService'
-
+import { useContext } from 'react';
+import { OfferContext } from './Contexts/OfferContext';
 
 
 function App() {
 
-  const navigate = useNavigate();
-  const [offers, setOffers] = useState([]);
-  const offerService = offerServiceFactory();
-
-
-  useEffect(() => {
-    offerService.getAll()
-      .then(result => {
-        setOffers(result);
-      })
-  }, []);
-
+  // const { userId } = useContext(AuthContext);
+  // const { offers } = useContext(OfferContext)
 
 
 
@@ -49,9 +38,9 @@ function App() {
           <Routes>
 
             <Route path="/" element={<Home />} />
-            <Route path="offers/catalog" element={<Catalog />} offers = {offers}/>
+            <Route path="offers/catalog" element={<Catalog />} /*offers = {offers}*/ />
             <Route path="offers/create" element={<CreateOffer />} />
-            <Route path={`offers/${userId}`} element={<MyOffers />} />
+            {/* <Route path={`offers/${userId}`} element={<MyOffers />} /> */}
             <Route path="/details" element={<Details />} />
             <Route path="/postreview" element={<PostReview />} />
             <Route path="/reviews" element={<Reviews />} />

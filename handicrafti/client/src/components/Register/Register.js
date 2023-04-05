@@ -1,8 +1,7 @@
 import './Register.css'
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { AuthContext } from '../../Contexts/AuthContext';
-import { Link } from 'react-router-dom';
 
 export const Register = () => {
     

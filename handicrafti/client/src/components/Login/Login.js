@@ -1,15 +1,24 @@
 import './Login.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../Contexts/AuthContext';
+import { useForm } from '../../hooks/useForm';
 
 
 export const Login = () => {
+
+    const {onLoginSubmit} = useContext(AuthContext);
+    const { values, changeHandler, onSubmit } = useForm({
+        username: '',
+        password: '',
+    }, onLoginSubmit);
     return (
         <div className="login">
-            <div className="login-form-container">
+            <div className="login-form-container" method="POST" action="users/login" onSubmit={onSubmit}>
                 <form className="login-form" action="#" method="post">
                     <label htmlFor="username">Username</label>
-                    <input type="text" className="login-input" name="username" />
+                    <input type="text" className="login-input" name="username" value={values.username} onChange={changeHandler} />
                     <label htmlFor="password">Password</label>
-                    <input type="password" className="login-input" name="password" />
+                    <input type="password" className="login-input" name="password" value={values.password} onChange={changeHandler} />
                     <button id="login-submit" type="submit">Login</button>
                 </form>
             </div>
