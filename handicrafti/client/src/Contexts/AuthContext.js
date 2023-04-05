@@ -35,6 +35,7 @@ export const AuthProvider = ({
 
         try {
             const result = await authService.register(values);
+            await authService.login({username: values.username, password: values.password});
 
             setAuth(result);
 
@@ -46,8 +47,9 @@ export const AuthProvider = ({
 
 
     const onLogout = async () => {
-        await authService.logout()
+        // await authService.logout();
         setAuth({});
+        navigate('/offers/catalog');
     };
 
     const contextValues = {
