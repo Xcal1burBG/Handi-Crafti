@@ -1,9 +1,15 @@
-import { Offer } from "../Offer/Offer"
 import './Catalog.css';
+import { useContext } from "react";
+import { OfferContext } from "../../Contexts/OfferContext";
 
-export const Catalog = ({
-    // offers
-}) => {
+import { Offer } from "../Offer/Offer"
+
+
+export const Catalog = () => {
+
+     const { offers } = useContext(OfferContext);
+
+
     return (
 
         <div className="catalog-container">
@@ -12,6 +18,7 @@ export const Catalog = ({
                 ? <h3 className="no-articles">No offers yet</h3>
                 : offers.map(x => <Offer key={x._id} {...x} />)
             } */}
+
 
 
            <Offer />

@@ -17,6 +17,8 @@ export const Offer = () => {
             <div className="user-container">
 
                 <p className="offer-username">User: Awocadoo</p>
+                 {/* I am making different kind of candles. For more information and prices - phone me or email me */}
+                 {/* I create vases from different materials and in various shapes */}
 
                 <div className="offer-rating-container">
 

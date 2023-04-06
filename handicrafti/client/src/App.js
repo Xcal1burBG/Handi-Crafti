@@ -1,6 +1,10 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { useContext, useEffect, useState, useNavigate } from 'react';
+import { AuthProvider, AuthContext } from './Contexts/AuthContext';
+import { OfferContext } from './Contexts/OfferContext';
 
+// Components
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
@@ -14,51 +18,84 @@ import { Details } from './components/Details/Details';
 import { EditOffer } from './components/EditOffer/EditOffer';
 import { PostReview } from './components/PostReview/PostReview';
 import { Reviews } from './components/Reviews/Reviews';
-
-import { AuthProvider, AuthContext } from './Contexts/AuthContext';
-import { NotFound } from './components/NotFound/NotFound';
-import { useContext } from 'react';
-import { OfferContext } from './Contexts/OfferContext';
 import { Logout } from './components/Logout/Logout';
+import { NotFound } from './components/NotFound/NotFound';
+import { authServiceFactory } from './services/authService';
+
 
 
 function App() {
 
-  // const { userId } = useContext(AuthContext);
-  // const { offers } = useContext(OfferContext)
+  const { userId } = useContext(AuthContext);
+
+  const [offers, setOffers] = useState({});
+
+  const navigate = useNavigate();
+
+  const auth = useContext(AuthContext);
+  const offerService = authServiceFactory(auth.token);
 
 
+  useEffect(() => {
+    offerService.getAll()
+      .then(result => {
+        setOffers(result);
+      })
+  }, []);
+
+
+  const onCreateOfferSubmit = async (values) => {
+
+    try {
+        const newOffer = await offerService.Create(values);
+        setOffers(state => [...state, newOffer]);
+
+    } catch (error) {
+        console.log('Problem with creating an offer');
+    }
+}
+
+  const offerContextValues = {
+    onCreateOfferSubmit,
+    offers,
+  }
+ 
 
   return (
     <AuthProvider>
-      <div className="App">
+      <OfferContext.Provider value={offerContextValues}>
 
-        <Header />
-        <main>
+        <div className="App">
 
-          <Routes>
+          <Header />
 
-            <Route path="/" element={<Home />} />
-            <Route path="offers/catalog" element={<Catalog />} /*offers = {offers}*/ />
-            <Route path="offers/create" element={<CreateOffer />} />
-            {/* <Route path={`offers/${userId}`} element={<MyOffers />} /> */}
-            <Route path="/details" element={<Details />} />
-            <Route path="/postreview" element={<PostReview />} />
-            <Route path="/reviews" element={<Reviews />} />
-            <Route path="/edit" element={<EditOffer />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path ="*" element={<NotFound />} />
+          <main>
 
-          </Routes>
+            <Routes>
 
+              <Route path="/" element={<Home />} />
+              <Route path="offers/catalog" element={<Catalog />} />
+              <Route path="offers/create" element={<CreateOffer />} />
+              <Route path={`offers/${userId}`} element={<MyOffers />} />
+              <Route path="/details" element={<Details />} />
+              <Route path="/postreview" element={<PostReview />} />
+              <Route path="/reviews" element={<Reviews />} />
+              <Route path="/edit" element={<EditOffer />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/logout" element={<Logout />} />
+              <Route path="*" element={<NotFound />} />
 
-        </main>
-        <Footer />
+            </Routes>
 
-      </div>
+          </main>
+
+          <Footer />
+
+        </div>
+
+      </OfferContext.Provider>
     </AuthProvider>
   );
 }

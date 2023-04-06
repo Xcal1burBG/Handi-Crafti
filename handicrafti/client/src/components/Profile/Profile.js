@@ -22,17 +22,17 @@ export const Profile = () => {
 
 
 
-                    <label for="email">Change email</label>
+                    <label htmlFor="email">Change email</label>
                     <input type="text" className="profile-input" name="email" />
 
-                    <label for="phoneNumber">Change phone number</label>
+                    <label htmlFor="phoneNumber">Change phone number</label>
                     <input type="text" className="profile-input" name="email" />
                 
 
-                    <label for="password">Change password</label>
+                    <label htmlFor="password">Change password</label>
                     <input type="password" className="profile-input" name="password" />
 
-                    <label for="repass">Repeat password</label>
+                    <label htmlFor="repass">Repeat password</label>
                     <input type="password" className="register-input" name="repass" />
 
                     <button id="profile-submit" type="submit">Save changes</button>

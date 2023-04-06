@@ -18,7 +18,7 @@ export const AuthProvider = ({
     const onLoginSubmit = async (values) => {
         try {
             const result = await authService.login(values);
-            
+
             setAuth(result);
             navigate('/offers/catalog');
         } catch (error) {
@@ -35,7 +35,7 @@ export const AuthProvider = ({
 
         try {
             const result = await authService.register(values);
-            await authService.login({username: values.username, password: values.password});
+            await authService.login({ username: values.username, password: values.password });
 
             setAuth(result);
 
@@ -47,7 +47,7 @@ export const AuthProvider = ({
 
 
     const onLogout = async () => {
-        // await authService.logout();
+        
         setAuth({});
         navigate('/offers/catalog');
     };
