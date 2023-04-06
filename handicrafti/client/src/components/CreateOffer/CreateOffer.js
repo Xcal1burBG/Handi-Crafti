@@ -5,7 +5,21 @@ import { useForm } from '../../hooks/useForm';
 
 
 export const CreateOffer = () => {
-    const {onCreateOfferSubmit} = useContext(OfferContext);
+    
+    const onCreateOfferSubmit = async (values) => {
+
+        // try {
+        //     const newOffer = await onCreateOfferSubmit.Create(values);
+        //     setOffers(state => [...state, newOffer]);
+    
+        // } catch (error) {
+        //     console.log('Problem with creating an offer');
+        // }
+    }
+
+
+
+
     const { values, changeHandler, onSubmit } = useForm({
         title: '',
         description: '',

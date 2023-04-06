@@ -1,8 +1,5 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { useContext, useEffect, useState, useNavigate } from 'react';
-import { AuthProvider, AuthContext } from './Contexts/AuthContext';
-import { OfferContext } from './Contexts/OfferContext';
 
 // Components
 import { Footer } from "./components/Footer/Footer";
@@ -20,50 +17,19 @@ import { PostReview } from './components/PostReview/PostReview';
 import { Reviews } from './components/Reviews/Reviews';
 import { Logout } from './components/Logout/Logout';
 import { NotFound } from './components/NotFound/NotFound';
-import { authServiceFactory } from './services/authService';
 
+// Contexts and services
+import { AuthProvider } from './Contexts/AuthContext';
+import { OfferContext, OfferContextProvider } from './Contexts/OfferContext';
 
 
 function App() {
 
-  const { userId } = useContext(AuthContext);
 
-  const [offers, setOffers] = useState({});
-
-  const navigate = useNavigate();
-
-  const auth = useContext(AuthContext);
-  const offerService = authServiceFactory(auth.token);
-
-
-  useEffect(() => {
-    offerService.getAll()
-      .then(result => {
-        setOffers(result);
-      })
-  }, []);
-
-
-  const onCreateOfferSubmit = async (values) => {
-
-    try {
-        const newOffer = await offerService.Create(values);
-        setOffers(state => [...state, newOffer]);
-
-    } catch (error) {
-        console.log('Problem with creating an offer');
-    }
-}
-
-  const offerContextValues = {
-    onCreateOfferSubmit,
-    offers,
-  }
- 
 
   return (
     <AuthProvider>
-      <OfferContext.Provider value={offerContextValues}>
+      <OfferContext.Provider value={OfferContextProvider}>
 
         <div className="App">
 
@@ -74,13 +40,17 @@ function App() {
             <Routes>
 
               <Route path="/" element={<Home />} />
-              <Route path="offers/catalog" element={<Catalog />} />
-              <Route path="offers/create" element={<CreateOffer />} />
-              <Route path={`offers/${userId}`} element={<MyOffers />} />
+
+
+              <Route path="/offers/catalog" element={<Catalog />} />
+              <Route path="/offers/create" element={<CreateOffer />} />
+              <Route path={`/offers/:userId`} element={<MyOffers />} />
               <Route path="/details" element={<Details />} />
               <Route path="/postreview" element={<PostReview />} />
               <Route path="/reviews" element={<Reviews />} />
               <Route path="/edit" element={<EditOffer />} />
+
+
               <Route path="/profile" element={<Profile />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
@@ -96,7 +66,7 @@ function App() {
         </div>
 
       </OfferContext.Provider>
-    </AuthProvider>
+    </AuthProvider >
   );
 }
 

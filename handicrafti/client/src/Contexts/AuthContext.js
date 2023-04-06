@@ -64,12 +64,10 @@ export const AuthProvider = ({
     };
 
     return (
-        <>
             <AuthContext.Provider value={contextValues}>
                 {children}
             </ AuthContext.Provider>
-        </>
-    )
+        )
 };
 
 export const useAuthContext = () => {
