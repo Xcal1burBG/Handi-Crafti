@@ -8,7 +8,8 @@ import { OfferContext } from '../../Contexts/OfferContext';
 export const Catalog = () => {
 
  const { offers } = useContext(OfferContext);
- console.log('This is in catalog component');
+ console.log(offers);
+ 
 
     return (
 
@@ -16,21 +17,8 @@ export const Catalog = () => {
 
             {offers.length === 0
                 ? <h3 className="no-articles">No offers yet</h3>
-                : offers.map(x => <Offer key={x._id} {...x} />)
+                : offers.map(x => <Offer key={x.id} {...x} />)
             }
-
-
-            {/* <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer />
-            <Offer /> */}
-
 
         </div>
 

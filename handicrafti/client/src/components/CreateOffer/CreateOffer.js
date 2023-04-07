@@ -1,52 +1,29 @@
 import './CreateOffer.css';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { OfferContext } from '../../Contexts/OfferContext';
 import { useForm } from '../../hooks/useForm';
-import { offerServiceFactory } from '../../services/offerService';
-import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthContext';
 
 
 export const CreateOffer = () => {
 
-    const { setOffers } = useContext(OfferContext);
-    const navigate = useNavigate();
-
-
-
-    const onCreateOfferSubmit = async (values) => {
-        try {
-            const result = await offerServiceFactory.createOffer(values);
-
-            setOffers(result);
-
-            navigate('/offers/catalog');
-
-        } catch (error) {
-            console.log('There is problem in AuthContext on create offer');
-        }
-
-    }
-
-    const [file, setFile] = useState(null);
-
-    const handleFileChange = (e) => {
-        if (e.target.files && e.target.files[0]) {
-            setFile(e.target.files[0]);
-        };
-    };
+    const { userId } = useContext(AuthContext);
+    const { onCreateOfferSubmit } = useContext(OfferContext);
 
 
     const { values, changeHandler, onSubmit } = useForm({
+        handiCrafterId: userId,
         title: '',
         description: '',
-        file: null
+        images: '',
+
     }, onCreateOfferSubmit);
 
     return (
         <div className="create">
             <div className="create-form-container">
                 <form className="create-form"
-                    action="offers/create"
+                    // action="offers/create"
                     method="POST"
                     onSubmit={onSubmit}>
 
@@ -74,12 +51,12 @@ export const CreateOffer = () => {
                             onChange={handleFileChange }
                             name="file_upload" /> */}
 
-                    <label htmlFor="imageUrl">Link to a photo</label>
+                    <label htmlFor="images">Link to a photo</label>
                     <input className="create-input"
                         type="text"
-                        value={values.imageUrl}
-                        onChange={handleFileChange}
-                        name="imageUrl" />
+                        value={values.images}
+                        onChange={changeHandler}
+                        name="images" />
 
 
                     <button id="create-submit" type="submit">Create</button>
