@@ -8,8 +8,9 @@
     padding: 10px 10px 0px 10px;
     margin: 10px 10px 10px 10px;
     border: 2px;
-background-color: #f0f0fb;
+    background-color: #f0f0fb;
     border-color: #9aaced;
+    cursor: pointer;
 }
 
 .offer-image-container {
@@ -30,7 +31,7 @@ background-color: #f0f0fb;
     object-fit: cover;
     background: white;
     align-items: center;
-    
+
 
 }
 
@@ -52,7 +53,7 @@ background-color: #f0f0fb;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    
+
 }
 
 /* .offer-username-image {
@@ -81,14 +82,14 @@ background-color: #f0f0fb;
 
 }
 
-.offer-rating-container{
-display: flex;
+.offer-rating-container {
+    display: flex;
     flex-direction: row;
     font-size: 13px;
     width: 100%;
     color: #031a6f;
 
-   
+
 }
 
 
@@ -99,7 +100,7 @@ display: flex;
     margin: 2px 0px 2px 0px;
     padding-left: 12px;
     text-align: center;
-    
+
 }
 
 .offer-rating-value {
@@ -111,6 +112,6 @@ display: flex;
 
 }
 
-.offer-rating-container p{
+.offer-rating-container p {
     margin: 2px 0px 2px 0px;
 }

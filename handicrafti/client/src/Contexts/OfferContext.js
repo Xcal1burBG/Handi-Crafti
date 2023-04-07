@@ -11,35 +11,49 @@ export const OfferContextProvider = ({
 }) => {
 
     const [offers, setOffers] = useState([]);
+    const [myOffers, setMyOffers]= useState([]);
 
     const auth = useContext(AuthContext)
+    const {userId} = useContext(AuthContext);
     const offerService = offerServiceFactory(auth.token);
     const navigate = useNavigate();
 
 
 
     useEffect(() => {
-
-
         offerService.getAll()
             .then(result => {
-                console.log(result);
                 setOffers(result);
 
             }).catch(error => {
                 console.log(error)
 
             });
+
+    }, []);
+
+    useEffect(() => {
+        offerService.getByUserId(userId)
+            .then(result => {
+                console.log(result);
+                setMyOffers(result);
+    
+            }).catch(error => {
+                console.log(error)
+    
+            });
         
     }, []);
 
+
+
+
     const onCreateOfferSubmit = async (values) => {
         try {
-            console.log(values);
+
             const result = await offerService.create(values);
 
-            setOffers(result);
-            console.log('no error before');
+            setOffers(state => [...state, result]);
 
             navigate('/offers/catalog');
 
@@ -50,15 +64,15 @@ export const OfferContextProvider = ({
     }
 
 
-
     const offerContextValues = {
         offers,
+        myOffers,
         setOffers,
         onCreateOfferSubmit,
 
     };
 
-   
+
 
 
 

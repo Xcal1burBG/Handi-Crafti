@@ -8,10 +8,8 @@ import { OfferContext } from '../../Contexts/OfferContext';
 export const Catalog = () => {
 
  const { offers } = useContext(OfferContext);
- console.log(offers);
- 
 
-    return (
+     return (
 
         <div className="catalog-container">
 

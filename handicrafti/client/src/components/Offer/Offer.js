@@ -1,18 +1,26 @@
+import { useNavigate } from 'react-router-dom';
 import './Offer.css';
+import { baseUrl } from '../../config/config';
 
 export const Offer = ({
+    id,
     title,
     images,
     handiCraftersUsername
 }) => {
 
+    const navigate = useNavigate();
 
+    const showDetails = (id) => {
+        navigate(`/offers/get/${id}`);
+
+    }
 
 
     return (
 
 
-        <div className="offer">
+        <div className="offer" onClick={() => showDetails(id)}>
 
             <div className="offer-image-container">
                 <img className="offer-image" src={images} alt="" />
