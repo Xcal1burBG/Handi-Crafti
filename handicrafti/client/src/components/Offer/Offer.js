@@ -12,7 +12,8 @@ export const Offer = ({
     const navigate = useNavigate();
 
     const showDetails = (id) => {
-        navigate(`/offers/get/${id}`);
+
+        navigate(`/offers/details/${id}`);
 
     }
 

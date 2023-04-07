@@ -3,7 +3,13 @@ import './Details.css';
 import * as reviewService from '../../services/reviewService';
 
 export const Details = () => {
+
+    const imageUnits = '';
+    
     return (
+        
+
+
         <div className="details">
 
             <div className="details-offer-text-container">

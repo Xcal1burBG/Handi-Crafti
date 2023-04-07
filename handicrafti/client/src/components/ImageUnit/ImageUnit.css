@@ -32,13 +32,13 @@ display: block
 
 .make-main{
     display: block;
-    margin: 10px auto 2px;
+    margin: 3px auto 2px;
 }
 
 .details-delete-photo{
     color: rgb(225, 77, 77);
     font-size: 14px;
     display: block;
-    margin: 0px auto 2px;
+    margin: 10px auto 2px;
 }
 

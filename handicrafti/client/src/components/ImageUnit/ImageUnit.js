@@ -1,6 +1,10 @@
 import './ImageUnit.css'
 
 export const ImageUnit = () => {
+
+    const currentUrl = window.location.href;
+
+
     return (
 
         <>
@@ -12,8 +16,13 @@ export const ImageUnit = () => {
 
                 </div>
 
-                <span type="text" className="make-main">Make main</span>
-                <span type="text" className="details-delete-photo">Delete photo</span>
+                {currentUrl.includes('edit') &&
+
+                    <>
+                        <span type="text" className="details-delete-photo">Delete photo</span>
+                        <span type="text" className="make-main">Make main</span>
+                    </>
+                }
 
             </div>
 

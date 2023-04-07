@@ -37,9 +37,10 @@ export const EditOffer = () => {
 
                 <div className="edit-add-photo-container">
                     <label className="edit-label-photo" htmlFor="file">Add photo</label>
-                    <input className="edit-add-photo" type="file" name="file" />
+                    <input className="edit-add-photo" type="text" name="file" />
                 </div>
 
+                <button className="edit-save-submit" type="submit">Cancel</button>
                 <button className="edit-save-submit" type="submit">Save changes</button>
             </div>
 
