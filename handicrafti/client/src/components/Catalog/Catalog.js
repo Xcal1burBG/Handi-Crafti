@@ -7,21 +7,20 @@ import { OfferContext } from '../../Contexts/OfferContext';
 
 export const Catalog = () => {
 
- const {offers} = useContext(OfferContext);
-
+ const { offers } = useContext(OfferContext);
+ console.log('This is in catalog component');
 
     return (
 
         <div className="catalog-container">
 
-            {/* {offers.length === 0
+            {offers.length === 0
                 ? <h3 className="no-articles">No offers yet</h3>
                 : offers.map(x => <Offer key={x._id} {...x} />)
-            } */}
+            }
 
-{offers.map(x => <Offer key={x.id} />)}
 
-           <Offer />
+            {/* <Offer />
             <Offer />
             <Offer />
             <Offer />
@@ -30,7 +29,7 @@ export const Catalog = () => {
             <Offer />
             <Offer />
             <Offer />
-            <Offer /> 
+            <Offer /> */}
 
 
         </div>

@@ -1,7 +1,12 @@
 import './Offer.css';
 
-export const Offer = () => {
-    return (
+export const Offer = ({
+    title,
+    description,
+    photos
+}) => {
+
+        return (
 
 
         <div className="offer">

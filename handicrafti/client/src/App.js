@@ -29,7 +29,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <OfferContext.Provider value={OfferContextProvider}>
+      < OfferContext.Provider value={OfferContextProvider}>
 
         <div className="App">
 
@@ -65,7 +65,7 @@ function App() {
 
         </div>
 
-      </OfferContext.Provider>
+      </ OfferContext.Provider>
     </AuthProvider >
   );
 }
