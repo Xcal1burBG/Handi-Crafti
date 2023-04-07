@@ -3,28 +3,27 @@ import { Offer } from '../Offer/Offer';
 import { offerServiceFactory } from '../../services/offerService';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
-import {offerService} from '../../services/offerService';
+import { offerService } from '../../services/offerService';
 import { OfferContext } from '../../Contexts/OfferContext';
 
 
 export const MyOffers = () => {
 
     const auth = useContext(AuthContext);
-    const {userId} = useContext(AuthContext);
-    const [myOffers, setMyOffers]= useState([]);
+    const { userId } = useContext(AuthContext);
+    const [myOffers, setMyOffers] = useState([]);
     const offerService = offerServiceFactory(auth.token);
 
     useEffect(() => {
-       offerService.getByUserId(userId)
+        offerService.getByUserId(userId)
             .then(result => {
-                console.log(result);
                 setMyOffers(result);
-    
+
             }).catch(error => {
                 console.log(error)
-    
+
             });
-        
+
     }, []);
 
     return (

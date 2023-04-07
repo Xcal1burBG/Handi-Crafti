@@ -1,37 +1,36 @@
 import { ImageUnit } from '../ImageUnit/ImageUnit';
 import './Details.css';
-import * as reviewService from '../../services/reviewService';
 import { useParams } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { OfferDetailsContext } from '../../Contexts/OfferDetailsContext';
+import { AuthContext } from '../../Contexts/AuthContext';
+import { offerServiceFactory } from '../../services/offerService';
 import { OfferContext } from '../../Contexts/OfferContext';
 
 export const Details = () => {
 
-    const offerId = useParams();
-    const {offers} = useContext(OfferContext);
-    const offer = offers.find(x => x.id === offerId);
-    console.log(offer);
-
+    const { offerId } = useParams();
+    const {offer} = useContext(OfferDetailsContext);
 
 
     return (
-        
+
 
 
         <div className="details">
 
             <div className="details-offer-text-container">
-                <p className="details-title">Hardcoded title </p>
+                <p className="details-title">{offer.title}</p>
 
 
-                <p className="details-description">Hardcoded description, Hardcoded description, Hardcoded description, Hardcoded description </p>
+                <p className="details-description"> {offer.description} </p>
 
                 <div className="details-user-contacts-container">
 
-                    <p className="details-username">User: Awocadoo</p>
+                    <p className="details-username">User: {offer.handiCraftersUsername}</p>
                     <p className="details-contacts">Contact with user:</p>
-                    <p className="details-phone">Phone: 0886552870</p>
-                    <p className="details-email">Email: ivalkov79@abv.bg</p>
+                    <p className="details-phone">Phone: {offer.phoneNumber}</p>
+                    <p className="details-email">Email: {offer.email}</p>
                 </div>
 
                 {/* <p className="details-rating">Rating: 9.8</p> */}
@@ -60,7 +59,7 @@ export const Details = () => {
                     <input className="details-add-photo" type="text" name="photo"/>
                 </div> */}
 
-                <form className = "editBtn" action="/edit">
+                <form className="editBtn" action="/edit">
                     <button className="details-edit-submit" >Edit</button>
                 </form>
 

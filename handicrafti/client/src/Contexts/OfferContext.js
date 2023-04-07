@@ -13,7 +13,7 @@ export const OfferContextProvider = ({
     const [offers, setOffers] = useState([]);
 
 
-    const auth = useContext(AuthContext)
+    const auth = useContext(AuthContext);
     const offerService = offerServiceFactory(auth.token);
     const navigate = useNavigate();
 
@@ -35,6 +35,7 @@ export const OfferContextProvider = ({
         try {
 
             const result = await offerService.create(values);
+            console.log(result);
 
             setOffers(state => [...state, result]);
 
