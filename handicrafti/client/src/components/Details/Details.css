@@ -111,8 +111,7 @@
 .details-add-photo {
 display: block;
 font-size: 14px;
-border-radius: 10px;
-border-radius: 15px;
+border-radius: 6px;
 
 }
 
@@ -125,7 +124,7 @@ border-radius: 15px;
 
 .details-edit-submit{
     color: #031a6f;
-    margin-left: -56px;
+    margin-left: 22px;
     display: block;
     font-size: 14px;
     background-color: #9aaced;

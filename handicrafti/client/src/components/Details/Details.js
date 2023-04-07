@@ -43,7 +43,7 @@ export const Details = () => {
 
                 <div className="details-add-photo-container">
                     <label className="details-label-photo" htmlFor="photo">Add photo</label>
-                    <input className="details-add-photo" type="file" name="photo"/>
+                    <input className="details-add-photo" type="text" name="photo"/>
                 </div>
 
                 <form action="/edit">

@@ -13,6 +13,9 @@ export const useForm = (initialValues, onSubmitHandler) => {
         e.preventDefault();
         onSubmitHandler(values);
         setValues(initialValues);
+        if(values.file){
+
+        }
     };
 
     const changeValues = (newValues) => {
