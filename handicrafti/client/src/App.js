@@ -20,7 +20,8 @@ import { NotFound } from './components/NotFound/NotFound';
 
 // Contexts and services
 import { AuthProvider } from './Contexts/AuthContext';
-import { OfferContext, OfferContextProvider } from './Contexts/OfferContext';
+import { OfferContextProvider } from './Contexts/OfferContext';
+import { OfferDetailsContextProvider } from './Contexts/OfferDetailsContext';
 
 
 function App() {
@@ -29,42 +30,42 @@ function App() {
 
   return (
     <AuthProvider>
-      < OfferContextProvider value={OfferContextProvider}>
+      < OfferContextProvider>
+        <OfferDetailsContextProvider>
 
-        <div className="App">
+          <div className="App">
 
-          <Header />
+            <Header />
 
-          <main>
+            <main>
 
-            <Routes>
+              <Routes>
 
-              <Route path="/" element={<Home />} />
-
-
-              <Route path="/offers/catalog" element={<Catalog />} />
-              <Route path="/offers/create" element={<CreateOffer />} />
-              <Route path={`/offers/:userId`} element={<MyOffers />} />
-              <Route path="offers/details/:offerId" element={<Details />} />
-              <Route path="/postreview/:userId" element={<PostReview />} />
-              <Route path="/reviews/:userId" element={<Reviews />} />
-              <Route path="/edit" element={<EditOffer />} />
+                <Route path="/" element={<Home />} />
 
 
-              {/* <Route path="/profile" element={<Profile />} /> */}
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/logout" element={<Logout />} />
-              <Route path="*" element={<NotFound />} />
+                <Route path="/offers/catalog" element={<Catalog />} />
+                <Route path="/offers/create" element={<CreateOffer />} />
+                <Route path={`/offers/:userId`} element={<MyOffers />} />
+                <Route path="offers/details/:offerId" element={<Details />} />
+                <Route path="/postreview/:userId" element={<PostReview />} />
+                <Route path="/reviews/:userId" element={<Reviews />} />
+                <Route path="/edit" element={<EditOffer />} />
+                {/* <Route path="/profile" element={<Profile />} /> */}
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/logout" element={<Logout />} />
+                <Route path="*" element={<NotFound />} />
 
-            </Routes>
+              </Routes>
 
-          </main>
+            </main>
 
-          <Footer />
+            <Footer />
 
-        </div>
+          </div>
 
+        </OfferDetailsContextProvider>
       </ OfferContextProvider>
     </AuthProvider >
   );

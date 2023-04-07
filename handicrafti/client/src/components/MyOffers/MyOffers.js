@@ -9,7 +9,23 @@ import { OfferContext } from '../../Contexts/OfferContext';
 
 export const MyOffers = () => {
 
-   const {myOffers} = useContext(OfferContext);
+    const auth = useContext(AuthContext);
+    const {userId} = useContext(AuthContext);
+    const [myOffers, setMyOffers]= useState([]);
+    const offerService = offerServiceFactory(auth.token);
+
+    useEffect(() => {
+       offerService.getByUserId(userId)
+            .then(result => {
+                console.log(result);
+                setMyOffers(result);
+    
+            }).catch(error => {
+                console.log(error)
+    
+            });
+        
+    }, []);
 
     return (
         <div className="myoffers-container">

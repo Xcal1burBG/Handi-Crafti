@@ -1,11 +1,19 @@
 import { ImageUnit } from '../ImageUnit/ImageUnit';
 import './Details.css';
 import * as reviewService from '../../services/reviewService';
+import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { OfferContext } from '../../Contexts/OfferContext';
 
 export const Details = () => {
 
-    const imageUnits = '';
-    
+    const offerId = useParams();
+    const {offers} = useContext(OfferContext);
+    const offer = offers.find(x => x.id === offerId);
+    console.log(offer);
+
+
+
     return (
         
 
@@ -26,7 +34,7 @@ export const Details = () => {
                     <p className="details-email">Email: ivalkov79@abv.bg</p>
                 </div>
 
-                <p className="details-rating">Rating: 9.8</p>
+                {/* <p className="details-rating">Rating: 9.8</p> */}
             </div>
 
             <div className="details-all-images-container">
@@ -47,12 +55,12 @@ export const Details = () => {
                 <a href="/reviews" >View all reviews</a>
 
 
-                <div className="details-add-photo-container">
+                {/* <div className="details-add-photo-container">
                     <label className="details-label-photo" htmlFor="photo">Add photo</label>
                     <input className="details-add-photo" type="text" name="photo"/>
-                </div>
+                </div> */}
 
-                <form action="/edit">
+                <form className = "editBtn" action="/edit">
                     <button className="details-edit-submit" >Edit</button>
                 </form>
 

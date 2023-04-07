@@ -92,5 +92,6 @@ border-radius: 6px;
     border-color: #031a6f;
     border-radius: 12px;
     padding: 5px 15px 5px 15px;
+    cursor: pointer;
 }
 
