@@ -48,8 +48,8 @@ function App() {
                 <Route path="/offers/create" element={<CreateOffer />} />
                 <Route path={`/offers/:userId`} element={<MyOffers />} />
                 <Route path="offers/details/:offerId" element={<Details />} />
-                <Route path="/postreview/:userId" element={<PostReview />} />
-                <Route path="/reviews/:userId" element={<Reviews />} />
+                <Route path="/reviews/post/:userId" element={<PostReview />} />
+                <Route path="/reviews/offer/:offerId" element={<Reviews />} />
                 <Route path="offers/edit/:offerId" element={<EditOffer />} />
                 {/* <Route path="/profile" element={<Profile />} /> */}
                 <Route path="/login" element={<Login />} />

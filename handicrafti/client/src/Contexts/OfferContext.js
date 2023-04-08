@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { offerServiceFactory } from '../services/offerService';
 import { AuthContext } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { reviewServiceFactory } from '../services/reviewService';
 
 
 export const OfferContext = createContext();
@@ -15,7 +16,22 @@ export const OfferContextProvider = ({
 
     const auth = useContext(AuthContext);
     const offerService = offerServiceFactory(auth.token);
+    const reviewService = reviewServiceFactory(auth.token);
     const navigate = useNavigate();
+
+
+    const onPostReviewSubmit = async (values) => {
+        try {
+            const result = await reviewService.create(values);
+
+            setOffers((state) => ({...state, }), result);
+            navigate('/offers/catalog');
+        } catch (error) {
+            console.log('problem');
+        }
+
+    };
+
 
 
     useEffect(() => {
@@ -70,6 +86,7 @@ export const OfferContextProvider = ({
         onCreateOfferSubmit,
         onEditOfferSubmit,
         onDeleteOfferSubmit,
+        onPostReviewSubmit,
 
     };
 
@@ -87,6 +104,6 @@ export const OfferContextProvider = ({
 
 export const useOfferContext = () => {
     const context = useContext(OfferContext);
-  
+
     return context;
-  };
+};

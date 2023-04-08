@@ -10,7 +10,7 @@ import { useService } from '../../hooks/useService';
 
 export const EditOffer = () => {
     
-    const offerId = useParams();
+    const {offerId} = useParams();
     const { onEditOfferSubmit } = useOfferContext();
     const { errors, minLength, isFormValid, validateImage } = useErrorContext();
 
@@ -93,8 +93,8 @@ export const EditOffer = () => {
                 </div>
 
 
-                <Link to={`/offers/details/${values.id}`} style={{ textDecoration: 'none' }}>
-                    <button className="edit-save-submit" type="submit">Cancel</button>
+                <Link to={`/offers/details/${offerId}`} style={{ textDecoration: 'none' }}>
+                    <button className="edit-save-submit">Cancel</button>
                 </Link>
 
 

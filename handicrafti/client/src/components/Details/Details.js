@@ -10,7 +10,7 @@ import { baseUrl } from '../../config/config';
 
 export const Details = () => {
 
-    const { handicrafterId } = useParams();
+    const { offerId } = useParams();
     const [offer, setOffer] = useState({});
     const auth = useContext(AuthContext);
     const offerService = offerServiceFactory(auth.token);
@@ -18,8 +18,9 @@ export const Details = () => {
     const { token, userId, username, isAuthenticated, userEmail } = useContext(AuthContext);
 
 
+    console.log(offer);
     useEffect(() => {
-        Promise.all([offerService.getById(handicrafterId), reviewService.getAllForUser(handicrafterId)])
+        Promise.all([offerService.getById(offerId), reviewService.getAllReviewsOfHandiCrafter(offerId)])
             .then(([offer, reviews]) => {
                 const offerState = {
                     ...offer,
@@ -28,10 +29,10 @@ export const Details = () => {
                 setOffer(offerState);
             }
             );
-    }, [handicrafterId]);
+    }, [offerId]);
 
     const onReviewSubmit = async (values) => {
-        const response = await reviewService.create(handicrafterId, values.review);
+        const response = await reviewService.create(offer.handiCrafterId, values.review);
 
         setOffer((state) => ({
             ...state,
@@ -47,7 +48,8 @@ export const Details = () => {
         }));
     };
 
-    const isOwner = offer.handicrafterId === userId;
+
+    const isOwner = offer.handiCrafterId === userId;
 
 
     return (
@@ -87,8 +89,8 @@ export const Details = () => {
 
             <div className="details-buttons-container">
 
-                <a href="/postreview">Leave a review</a>
-                <a href="/reviews" >View all reviews</a>
+                <Link to={`/reviews/post/${offer.handiCrafterId}`}>Leave a review</Link>
+                <Link to={`/reviews/offer/${offerId}`} >View all reviews</Link>
 
 
                 {/* <div className="details-add-photo-container">

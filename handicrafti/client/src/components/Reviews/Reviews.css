@@ -1,11 +1,11 @@
-.reviews-container{
+.reviews-container {
     color: #031a6f;
     margin: 60px;
-    
-    
+
+
 }
 
-.reviews-title{
+.reviews-title {
     background-color: #9aaced;
     border-radius: 12px;
     padding: 15px;
@@ -13,7 +13,13 @@
 
 }
 
-.reviews-title span{
+.go-to-catalog {
+    color: #031452;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reviews-title span {
     margin-bottom: 20px;
 }
 
