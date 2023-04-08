@@ -4,31 +4,50 @@ import { useParams, Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
 import { offerServiceFactory } from '../../services/offerService';
+import { reviewServiceFactory } from '../../services/reviewService';
 import { OfferContext } from '../../Contexts/OfferContext';
 import { baseUrl } from '../../config/config';
 
 export const Details = () => {
 
-    const { offerId } = useParams();
+    const { handicrafterId } = useParams();
     const [offer, setOffer] = useState({});
+    const auth = useContext(AuthContext);
+    const offerService = offerServiceFactory(auth.token);
+    const reviewService = reviewServiceFactory(auth.token);
     const { token, userId, username, isAuthenticated, userEmail } = useContext(AuthContext);
-    const offerService = offerServiceFactory(token);
 
 
     useEffect(() => {
-        const fetchData = () => {
-            return new Promise((res, err) => {
-                fetch(`${baseUrl}/offers/details/${offerId}`)
-                    .then(response => response.json())
-                    .then(data => res(data))
-                    .catch(error => err(error));
-            });
-        };
+        Promise.all([offerService.getById(handicrafterId), reviewService.getAllForUser(handicrafterId)])
+            .then(([offer, reviews]) => {
+                const offerState = {
+                    ...offer,
+                    reviews,
+                };
+                setOffer(offerState);
+            }
+            );
+    }, [handicrafterId]);
 
-        fetchData()
-            .then(data => setOffer(data))
-            .catch(error => console.log(error));
-    }, []);
+    const onReviewSubmit = async (values) => {
+        const response = await reviewService.create(handicrafterId, values.review);
+
+        setOffer((state) => ({
+            ...state,
+            reviews: [
+                ...state.reviews,
+                {
+                    ...response,
+                    reviews: {
+                        username
+                    },
+                },
+            ],
+        }));
+    };
+
+    const isOwner = offer.handicrafterId === userId;
 
 
     return (
@@ -77,13 +96,19 @@ export const Details = () => {
                     <input className="details-add-photo" type="text" name="photo"/>
                 </div> */}
 
-                <Link to={`/offers/edit/${offerId}`} className="editBtn">
-                    <button className="details-edit-submit" >Edit</button>
-                </Link>
+                {isOwner && (
+                    <>
+                        <Link to={`/offers/edit/${offer.id}`} className="editBtn">
+                            <button className="details-edit-submit" >Edit</button>
+                        </Link>
 
-                <Link to={`/offers/delete/${offerId}`} className="deleteBtn">
-                    <button className="delete-submit" type="submit">Delete</button>
-                </Link>
+                        <Link to={`/offers/delete/${offer.id}`} className="deleteBtn">
+                            <button className="delete-submit" type="submit">Delete</button>
+                        </Link>
+                    </>
+
+                )}
+
             </div >
 
 

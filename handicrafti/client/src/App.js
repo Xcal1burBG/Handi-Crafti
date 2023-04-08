@@ -28,6 +28,8 @@ function App() {
 
 
 
+
+
   return (
     <ErrorProvider>
       <AuthProvider>
@@ -42,19 +44,13 @@ function App() {
               <Routes>
 
                 <Route path="/" element={<Home />} />
-
-
                 <Route path="/offers/catalog" element={<Catalog />} />
                 <Route path="/offers/create" element={<CreateOffer />} />
                 <Route path={`/offers/:userId`} element={<MyOffers />} />
-
-                  <>
-                    <Route path="offers/details/:offerId" element={<Details />} />
-                    <Route path="/postreview/:userId" element={<PostReview />} />
-                    <Route path="/reviews/:userId" element={<Reviews />} />
-                    <Route path="offers/edit/:offerId" element={<EditOffer />} />
-                  </>
-
+                <Route path="offers/details/:offerId" element={<Details />} />
+                <Route path="/postreview/:userId" element={<PostReview />} />
+                <Route path="/reviews/:userId" element={<Reviews />} />
+                <Route path="offers/edit/:offerId" element={<EditOffer />} />
                 {/* <Route path="/profile" element={<Profile />} /> */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />

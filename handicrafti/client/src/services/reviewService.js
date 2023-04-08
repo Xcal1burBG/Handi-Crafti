@@ -1,11 +1,12 @@
-import { request } from './requester';
-
+import { requestFactory } from './requester';
 import {baseUrl} from '../config/config';
 
 
-
-export const getAll = async() => {
-const reviews = await request('GET', `${baseUrl}/reviews`);
-
-return reviews;
+export const reviewServiceFactory = (token) => {
+    const request = requestFactory(token);
+    return {
+        create: (userId) => request.post(`${baseUrl}/postreview/${userId}`),
+        getAllForUser: (userId) => request.get(`${baseUrl}/reviews/${userId}`)
+    } 
 }
+
