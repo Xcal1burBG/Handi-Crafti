@@ -3,12 +3,14 @@ import { ReviewItem } from '../ReviewItem/ReviewItem';
 import './Reviews.css';
 import { useContext } from 'react';
 import { OfferContext } from '../../Contexts/OfferContext';
+import { AuthContext } from '../../Contexts/AuthContext';
 
 export const Reviews = ({
 
 }) => {
     const { offerId } = useParams();
     const { offers } = useContext(OfferContext);
+    const { username } = useContext(AuthContext);
 
     let offer = offers.find(x => x.id === offerId);
     let reviews = [];
@@ -35,7 +37,7 @@ export const Reviews = ({
                 {reviews.length === 0
                     ? <h3 className="no-reviews">This user still don't have any reviews</h3>
                     : reviews.map((x, index) => (
-                        <ReviewItem key={index} {...x} />
+                        <ReviewItem key={index} text={x.text} username={username} />
                     ))
                 }
 

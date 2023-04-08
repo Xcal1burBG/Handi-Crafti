@@ -43,7 +43,7 @@ export const OfferContextProvider = ({
 
             const result = await reviewService.create(values);
 
-            setOffers(state => [...state, result]);
+            setOffers(state => [{...state}, [result]]);
             navigate('/offers/catalog');
         } catch (error) {
             console.log('problem');
@@ -67,7 +67,6 @@ export const OfferContextProvider = ({
 
     }
     const onEditOfferSubmit = async (offer) => {
-        console.log('context!!!');
         const result = await offerService.edit(offer.id, offer);
         const { title, description, images } = result;
         if (
