@@ -12,7 +12,6 @@ export const Reviews = ({
 
     let offer = offers.find(x => x.id === offerId);
     let reviews = [];
-    console.log(offer);
 
     if (offer.reviewsForHandiCrafter.length != 0) {
         offer = offers.find(x => x.id === offerId);

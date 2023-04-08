@@ -20,17 +20,6 @@ export const OfferContextProvider = ({
     const navigate = useNavigate();
 
 
-    const onPostReviewSubmit = async (values) => {
-        try {
-            const result = await reviewService.create(values);
-
-            setOffers((state) => ({...state, }), result);
-            navigate('/offers/catalog');
-        } catch (error) {
-            console.log('problem');
-        }
-
-    };
 
 
 
@@ -47,11 +36,24 @@ export const OfferContextProvider = ({
     }, []);
 
 
+    const onPostReviewSubmit = async (values) => {
+        try {
+
+            const result = await reviewService.create(values);
+
+            setOffers(state => [...state, result]);
+            navigate('/offers/catalog');
+        } catch (error) {
+            console.log('problem');
+        }
+
+    };
+
+
     const onCreateOfferSubmit = async (values) => {
         try {
 
             const result = await offerService.create(values);
-            console.log(result);
 
             setOffers(state => [...state, result]);
 
@@ -75,9 +77,9 @@ export const OfferContextProvider = ({
         }
     }
 
-    const onDeleteOfferSubmit = async (values) => {
-
-    }
+    const deleteOffer = (offerId) => {
+        setOffers((state) => state.filter(offer => offer.id !== offerId))
+    };
 
 
     const offerContextValues = {
@@ -85,7 +87,7 @@ export const OfferContextProvider = ({
         setOffers,
         onCreateOfferSubmit,
         onEditOfferSubmit,
-        onDeleteOfferSubmit,
+        deleteOffer,
         onPostReviewSubmit,
 
     };

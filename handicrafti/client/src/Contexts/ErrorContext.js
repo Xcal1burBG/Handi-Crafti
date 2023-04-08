@@ -20,21 +20,38 @@ export const ErrorProvider = ({ children }) => {
     }));
   };
 
-  const validateImage = (e, values) => {
-    const regEx = /^https?.\/\//;
+  const validateUsername = (e, values) => {
+    const regex = /^[A-Za-z0-9^&_$]{3,}/;
     setErrors((state) => ({
       ...state,
-      [e.target.name]: values.match(regEx) === null,
+      [e.target.name]: values.match(regex) === null,
+    }));
+  };
+
+
+  const validateImage = (e, values) => {
+    const regex = /^https?.\/\//;
+    setErrors((state) => ({
+      ...state,
+      [e.target.name]: values.match(regex) === null,
     }));
   };
 
   const validateEmail = (e, values) => {
-    const regEx = /^[A-Za-z0-9]{3,}@[A-Za-z0-9]{3,}.[A-Za-z]{2,}$/;
+    const regex = /^[A-Za-z0-9]{3,}@[A-Za-z0-9]{3,}.[A-Za-z]{2,}$/;
     setErrors((state) => ({
       ...state,
-      [e.target.name]: values.match(regEx) === null,
+      [e.target.name]: values.match(regex) === null,
     }));
   };
+
+  const validatePhoneNumber = (e, values) => {
+    const regex = /^0[0-9]{3,}/;
+    setErrors((state) => ({
+      ...state,
+      [e.target.name]: values.match(regex) === null,
+    }));
+  }
 
   const isFormValid = !Object.values(errors).some((x) => x);
 
@@ -45,6 +62,8 @@ export const ErrorProvider = ({ children }) => {
     isFormValid,
     validateImage,
     validateEmail,
+    validateUsername,
+    validatePhoneNumber,
   };
 
   return (
@@ -55,6 +74,7 @@ export const ErrorProvider = ({ children }) => {
     </>
   );
 };
+
 
 export const useErrorContext = () => {
   const context = useContext(ErrorContext);

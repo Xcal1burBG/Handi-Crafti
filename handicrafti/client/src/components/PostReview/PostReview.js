@@ -1,17 +1,26 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './PostReview.css';
 import { useForm } from '../../hooks/useForm';
 import { OfferContext } from '../../Contexts/OfferContext';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../Contexts/AuthContext';
 
 export const PostReview = () => {
 
-    const { handiCrafterId } = useParams();
-    console.log(handiCrafterId);
+    const {userId} = useParams();
+    const reviewerId = useContext(AuthContext).userId;
+
     
+
+
+   
+   
+
     const { onPostReviewSubmit } = useContext(OfferContext);
     const { values, changeHandler, onSubmit } = useForm({
         text: '',
+        handiCrafterId: userId,
+        reviewerId
     }, onPostReviewSubmit);
 
 
@@ -19,12 +28,16 @@ export const PostReview = () => {
     return (
         <div className="postreview">
             <div className="postreview-form-container">
-                <form className="postreview-form" action={`/reviews/post/${handiCrafterId}`} method="POST" onSubmit ={onSubmit}>
+                <form className="postreview-form" action={`/reviews/post/${userId}`} method="POST" onSubmit={onSubmit}>
 
                     <span className="postreview-user">User: Username</span>
 
-                    <label htmlFor="description">Review text</label>
-                    <textarea type="text" className="postreview-input postreview-description" value={values.text} onChange={changeHandler} name="description">
+                    <label htmlFor="text">Review text</label>
+                    <textarea type="text"
+                        className="postreview-input postreview-description"
+                        value={values.text}
+                        onChange={changeHandler}
+                        name="text">
                     </textarea>
 
                     {/* <label htmlFor="rating-value" name="postreview-rating-value">Choose rating</label>

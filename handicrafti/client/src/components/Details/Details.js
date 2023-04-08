@@ -1,6 +1,6 @@
 import { ImageUnit } from '../ImageUnit/ImageUnit';
 import './Details.css';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthContext';
 import { offerServiceFactory } from '../../services/offerService';
@@ -15,12 +15,14 @@ export const Details = () => {
     const auth = useContext(AuthContext);
     const offerService = offerServiceFactory(auth.token);
     const reviewService = reviewServiceFactory(auth.token);
+    const { deleteOffer } = useContext(OfferContext)
     const { token, userId, username, isAuthenticated, userEmail } = useContext(AuthContext);
+    const navigate = useNavigate();
 
-
-    console.log(offer);
     useEffect(() => {
-        Promise.all([offerService.getById(offerId), reviewService.getAllReviewsOfHandiCrafter(offerId)])
+        Promise.all([
+            offerService.getById(offerId),
+            reviewService.getAllReviewsOfHandiCrafter(offerId)])
             .then(([offer, reviews]) => {
                 const offerState = {
                     ...offer,
@@ -47,6 +49,18 @@ export const Details = () => {
             ],
         }));
     };
+
+    const onDeleteClick = async () => {
+        // eslint-disable-next-line no-restricted-globals
+        const result = confirm(`Are you sure you want to delete ${offer.title}`);
+
+        if (result) {
+            await offerService.delete(offerId);
+
+            deleteOffer(offer.id)
+            navigate('/offers/catalog');
+        }
+    }
 
 
     const isOwner = offer.handiCrafterId === userId;
@@ -89,7 +103,9 @@ export const Details = () => {
 
             <div className="details-buttons-container">
 
-                <Link to={`/reviews/post/${offer.handiCrafterId}`}>Leave a review</Link>
+                {isAuthenticated && !isOwner &&
+                    <Link to={`/reviews/post/${offer.handiCrafterId}`}>Leave a review</Link>
+                }
                 <Link to={`/reviews/offer/${offerId}`} >View all reviews</Link>
 
 
@@ -104,9 +120,9 @@ export const Details = () => {
                             <button className="details-edit-submit" >Edit</button>
                         </Link>
 
-                        <Link to={`/offers/delete/${offer.id}`} className="deleteBtn">
-                            <button className="delete-submit" type="submit">Delete</button>
-                        </Link>
+                        <button className="delete-submit" type="submit"
+                            onClick={onDeleteClick}>Delete</button>
+
                     </>
 
                 )}
