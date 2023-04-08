@@ -52,7 +52,7 @@ function App() {
                     <Route path="offers/details/:offerId" element={<Details />} />
                     <Route path="/postreview/:userId" element={<PostReview />} />
                     <Route path="/reviews/:userId" element={<Reviews />} />
-                    <Route path="/edit" element={<EditOffer />} />
+                    <Route path="offers/edit/:offerId" element={<EditOffer />} />
                   </>
 
                 {/* <Route path="/profile" element={<Profile />} /> */}

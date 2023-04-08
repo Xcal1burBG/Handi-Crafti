@@ -81,7 +81,7 @@ export const Details = () => {
                     <button className="details-edit-submit" >Edit</button>
                 </Link>
 
-                <Link to={`/offers/delete/${offerId}`} className="editBtn">
+                <Link to={`/offers/delete/${offerId}`} className="deleteBtn">
                     <button className="delete-submit" type="submit">Delete</button>
                 </Link>
             </div >

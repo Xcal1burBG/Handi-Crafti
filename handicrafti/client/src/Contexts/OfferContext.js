@@ -85,7 +85,7 @@ export const OfferContextProvider = ({
     );
 };
 
-export const usePetContext = () => {
+export const useOfferContext = () => {
     const context = useContext(OfferContext);
   
     return context;

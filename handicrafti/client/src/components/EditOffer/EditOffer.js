@@ -2,23 +2,23 @@ import { useContext, useEffect } from 'react';
 import { ImageUnit } from '../ImageUnit/ImageUnit';
 import './EditOffer.css';
 import { useParams, Link } from 'react-router-dom';
-import { OfferContext } from '../../Contexts/OfferContext';
+import { OfferContext, useOfferContext } from '../../Contexts/OfferContext';
 import { offerServiceFactory } from '../../services/offerService';
 import { useErrorContext } from '../../Contexts/ErrorContext';
 import { useForm } from '../../hooks/useForm';
 import { useService } from '../../hooks/useService';
 
 export const EditOffer = () => {
-
+    
     const offerId = useParams();
-    const { onEditOfferSubmit } = useContext(OfferContext);
+    const { onEditOfferSubmit } = useOfferContext();
     const { errors, minLength, isFormValid, validateImage } = useErrorContext();
 
 
     const offerService = useService(offerServiceFactory);
-
-    const { values, changeHandler, onSubmit, changeValues } = useForm(
+        const { values, changeHandler, onSubmit, changeValues } = useForm(
         {
+            id: offerId,
             title: "",
             description: "",
             photos: "",
@@ -27,9 +27,13 @@ export const EditOffer = () => {
     );
 
     useEffect(() => {
-        offerService.getById(offerId).then((result) => {
-            changeValues(result);
-        });
+        offerService.getById(offerId)
+            .then(result => {
+                changeValues(result);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     }, [offerId]);
 
 
@@ -45,11 +49,11 @@ export const EditOffer = () => {
                     value={values.title}
                     onChange={changeHandler}
                     onBlur={(e) => minLength(e, 3, values.title)} />
-                {/* {errors.title && (
+                {errors.title && (
                     <span className="edit-error">
                         Title must be at least 3 characters long!
                     </span>
-                )} */}
+                )}
 
 
                 <textarea type="text"
@@ -88,11 +92,11 @@ export const EditOffer = () => {
                     <input className="edit-add-photo" type="text" name="file" />
                 </div>
 
-               
-                    <Link to={`/offers/details/${offerId}`} style={{ textDecoration: 'none' }}>
-                        <button className="edit-save-submit" type="submit">Cancel</button>
-                    </Link>
-               
+
+                <Link to={`/offers/details/${values.id}`} style={{ textDecoration: 'none' }}>
+                    <button className="edit-save-submit" type="submit">Cancel</button>
+                </Link>
+
 
                 <button className="edit-save-submit" type="submit">Save changes</button>
             </div>
