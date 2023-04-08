@@ -9,22 +9,24 @@ import { useForm } from '../../hooks/useForm';
 import { useService } from '../../hooks/useService';
 
 export const EditOffer = () => {
-    
-    const {offerId} = useParams();
+
+    const { offerId } = useParams();
     const { onEditOfferSubmit } = useOfferContext();
     const { errors, minLength, isFormValid, validateImage } = useErrorContext();
 
 
     const offerService = useService(offerServiceFactory);
-        const { values, changeHandler, onSubmit, changeValues } = useForm(
+    const { values, changeHandler, onSubmit, changeValues } = useForm(
         {
             id: offerId,
             title: "",
             description: "",
-            photos: "",
+            photo: "",
         },
         onEditOfferSubmit
     );
+
+    console.log(values);
 
     useEffect(() => {
         offerService.getById(offerId)
@@ -74,13 +76,7 @@ export const EditOffer = () => {
             </div>
 
             <div className="edit-all-images-container">
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
+                <ImageUnit imageUrl={values.images} />
 
             </div>
 
@@ -88,8 +84,8 @@ export const EditOffer = () => {
             <div className="edit-buttons-container">
 
                 <div className="edit-add-photo-container">
-                    <label className="edit-label-photo" htmlFor="file">Add photo</label>
-                    <input className="edit-add-photo" type="text" name="file" />
+                    <label className="edit-label-photo" htmlFor="photo">Change photo</label>
+                    <input className="edit-add-photo" type="text" name="photo" />
                 </div>
 
 

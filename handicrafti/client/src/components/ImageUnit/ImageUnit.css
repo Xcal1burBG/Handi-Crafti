@@ -14,8 +14,9 @@
 
 
 .details-image-unit-container{
-    width: 100px;
-    height: 60px;
+    width: 210px;
+    height: 160px;
+    display: block;
     
 display: block
 }

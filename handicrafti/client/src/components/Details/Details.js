@@ -33,6 +33,8 @@ export const Details = () => {
             );
     }, [offerId]);
 
+    console.log(offer);
+
     const onReviewSubmit = async (values) => {
         const response = await reviewService.create(offer.handiCrafterId, values.review);
 
@@ -90,13 +92,7 @@ export const Details = () => {
             </div>
 
             <div className="details-all-images-container">
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
-                <ImageUnit />
+                <ImageUnit imageUrl={offer.images}/>
 
             </div>
 

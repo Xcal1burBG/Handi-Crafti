@@ -1,7 +1,9 @@
 import './ImageUnit.css'
 
-export const ImageUnit = () => {
-
+export const ImageUnit = ({
+    imageUrl
+}) => {
+   
     const currentUrl = window.location.href;
 
 
@@ -12,17 +14,17 @@ export const ImageUnit = () => {
             <div className="details-image-text-container">
                 <div className="details-image-unit-container">
 
-                    <img className="details-image-unit" src="https://portret.blog.bg/photos/91400/original/dvoika-m.jpg" alt="" />
+                    <img className="details-image-unit" src={imageUrl} alt="offer" />
 
                 </div>
 
-                {currentUrl.includes('edit') &&
+                {/* {currentUrl.includes('edit') &&
 
                     <>
                         <span type="text" className="details-delete-photo">Delete photo</span>
                         <span type="text" className="make-main">Make main</span>
                     </>
-                }
+                } */}
 
             </div>
 
