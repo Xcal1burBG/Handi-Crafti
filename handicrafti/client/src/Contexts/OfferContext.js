@@ -46,12 +46,30 @@ export const OfferContextProvider = ({
         }
 
     }
+    const onEditOfferSubmit = async (pet) => {
+        const result = await offerService.edit(pet._id, pet);
+        const { title, description, photos } = result;
+        if (
+            title === "" ||
+            description === "" ||
+            photos === ""
+        ) {
+            const message = "All fields are required!";
+            return;
+        }
+    }
+
+    const onDeleteOfferSubmit = async (values) => {
+
+    }
 
 
     const offerContextValues = {
         offers,
         setOffers,
         onCreateOfferSubmit,
+        onEditOfferSubmit,
+        onDeleteOfferSubmit,
 
     };
 
@@ -64,7 +82,11 @@ export const OfferContextProvider = ({
             {children}
         </ OfferContext.Provider>
 
-    )
+    );
 };
 
-
+export const usePetContext = () => {
+    const context = useContext(OfferContext);
+  
+    return context;
+  };

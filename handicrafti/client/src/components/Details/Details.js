@@ -1,16 +1,34 @@
 import { ImageUnit } from '../ImageUnit/ImageUnit';
 import './Details.css';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import { OfferDetailsContext } from '../../Contexts/OfferDetailsContext';
 import { AuthContext } from '../../Contexts/AuthContext';
 import { offerServiceFactory } from '../../services/offerService';
 import { OfferContext } from '../../Contexts/OfferContext';
+import { baseUrl } from '../../config/config';
 
 export const Details = () => {
 
     const { offerId } = useParams();
-    const {offer} = useContext(OfferDetailsContext);
+    const [offer, setOffer] = useState({});
+    const { token, userId, username, isAuthenticated, userEmail } = useContext(AuthContext);
+    const offerService = offerServiceFactory(token);
+
+
+    useEffect(() => {
+        const fetchData = () => {
+            return new Promise((res, err) => {
+                fetch(`${baseUrl}/offers/details/${offerId}`)
+                    .then(response => response.json())
+                    .then(data => res(data))
+                    .catch(error => err(error));
+            });
+        };
+
+        fetchData()
+            .then(data => setOffer(data))
+            .catch(error => console.log(error));
+    }, []);
 
 
     return (
@@ -59,11 +77,13 @@ export const Details = () => {
                     <input className="details-add-photo" type="text" name="photo"/>
                 </div> */}
 
-                <form className="editBtn" action="/edit">
+                <Link to={`/offers/edit/${offerId}`} className="editBtn">
                     <button className="details-edit-submit" >Edit</button>
-                </form>
+                </Link>
 
-                <button className="delete-submit" type="submit">Delete</button>
+                <Link to={`/offers/delete/${offerId}`} className="editBtn">
+                    <button className="delete-submit" type="submit">Delete</button>
+                </Link>
             </div >
 
 

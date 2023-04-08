@@ -1,29 +1,71 @@
+import { useContext, useEffect } from 'react';
 import { ImageUnit } from '../ImageUnit/ImageUnit';
 import './EditOffer.css';
 import { useParams, Link } from 'react-router-dom';
+import { OfferContext } from '../../Contexts/OfferContext';
+import { offerServiceFactory } from '../../services/offerService';
+import { useErrorContext } from '../../Contexts/ErrorContext';
+import { useForm } from '../../hooks/useForm';
+import { useService } from '../../hooks/useService';
 
 export const EditOffer = () => {
 
     const offerId = useParams();
+    const { onEditOfferSubmit } = useContext(OfferContext);
+    const { errors, minLength, isFormValid, validateImage } = useErrorContext();
+
+
+    const offerService = useService(offerServiceFactory);
+
+    const { values, changeHandler, onSubmit, changeValues } = useForm(
+        {
+            title: "",
+            description: "",
+            photos: "",
+        },
+        onEditOfferSubmit
+    );
+
+    useEffect(() => {
+        offerService.getById(offerId).then((result) => {
+            changeValues(result);
+        });
+    }, [offerId]);
+
+
 
 
 
     return (
-        <form className="edit">
+        <form className="edit" onSubmit={onSubmit}>
 
             <div className="edit-offer-text-container">
-                <input className="edit-title edit-input" value="Hardcoded title" />
-
+                <input className="edit-title edit-input"
+                    name="title"
+                    value={values.title}
+                    onChange={changeHandler}
+                    onBlur={(e) => minLength(e, 3, values.title)} />
+                {/* {errors.title && (
+                    <span className="edit-error">
+                        Title must be at least 3 characters long!
+                    </span>
+                )} */}
 
 
                 <textarea type="text"
                     className="edit-description edit-input"
-                    value="Hardcoded description"
+                    value={values.description}
+                    onChange={changeHandler}
                     name="description"
                     rows="2"
-                    cols="50">
-
+                    cols="50"
+                    onBlur={(e) => minLength(e, 10, values.description)} >
                 </textarea>
+                {errors.description && (
+                    <span className="edit-error">
+                        Description must be at least 10 characters long!
+                    </span>
+                )}
 
             </div>
 
@@ -46,11 +88,11 @@ export const EditOffer = () => {
                     <input className="edit-add-photo" type="text" name="file" />
                 </div>
 
-                <form action={`/offers/details/${offerId}`}>
+               
                     <Link to={`/offers/details/${offerId}`} style={{ textDecoration: 'none' }}>
                         <button className="edit-save-submit" type="submit">Cancel</button>
                     </Link>
-                </form>
+               
 
                 <button className="edit-save-submit" type="submit">Save changes</button>
             </div>

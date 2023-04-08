@@ -6,7 +6,7 @@ import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Home } from "./components/Home/Home";
 import { Catalog } from "./components/Catalog/Catalog";
-import { Profile } from "./components/Profile/Profile";
+// import { Profile } from "./components/Profile/Profile";
 import { Login } from "./components/Login/Login";
 import { Register } from "./components/Register/Register";
 import { CreateOffer } from './components/CreateOffer/CreateOffer';
@@ -21,7 +21,7 @@ import { NotFound } from './components/NotFound/NotFound';
 // Contexts and services
 import { AuthProvider } from './Contexts/AuthContext';
 import { OfferContextProvider } from './Contexts/OfferContext';
-import { OfferDetailsContextProvider } from './Contexts/OfferDetailsContext';
+import { ErrorProvider } from './Contexts/ErrorContext';
 
 
 function App() {
@@ -29,9 +29,9 @@ function App() {
 
 
   return (
-    <AuthProvider>
-      < OfferContextProvider>
-        <OfferDetailsContextProvider>
+    <ErrorProvider>
+      <AuthProvider>
+        < OfferContextProvider>
 
           <div className="App">
 
@@ -47,10 +47,14 @@ function App() {
                 <Route path="/offers/catalog" element={<Catalog />} />
                 <Route path="/offers/create" element={<CreateOffer />} />
                 <Route path={`/offers/:userId`} element={<MyOffers />} />
-                <Route path="offers/details/:offerId" element={<Details />} />
-                <Route path="/postreview/:userId" element={<PostReview />} />
-                <Route path="/reviews/:userId" element={<Reviews />} />
-                <Route path="/edit" element={<EditOffer />} />
+
+                  <>
+                    <Route path="offers/details/:offerId" element={<Details />} />
+                    <Route path="/postreview/:userId" element={<PostReview />} />
+                    <Route path="/reviews/:userId" element={<Reviews />} />
+                    <Route path="/edit" element={<EditOffer />} />
+                  </>
+
                 {/* <Route path="/profile" element={<Profile />} /> */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
@@ -65,9 +69,9 @@ function App() {
 
           </div>
 
-        </OfferDetailsContextProvider>
-      </ OfferContextProvider>
-    </AuthProvider >
+        </ OfferContextProvider>
+      </AuthProvider >
+    </ErrorProvider >
   );
 }
 

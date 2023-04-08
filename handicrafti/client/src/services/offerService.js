@@ -9,7 +9,7 @@ export const offerServiceFactory = (token) => {
         getAll: () => request.get(`${baseUrl}/offers/catalog`),
         getByUserId: (userId) => request.get(`${baseUrl}/offers/user/${userId}`),
         getById: (offerId) => request.get(`${baseUrl}/offers/details/${offerId}`),
-        edit: (offerId, data) => request.put(`${baseUrl}/offers/${offerId}/edit`, data),
-        delete: (offerId) => request.delete(`${baseUrl}/offers/${offerId}/delete`)
+        edit: (offerId, data) => request.put(`${baseUrl}/offers/edit/${offerId}`, data),
+        delete: (offerId) => request.delete(`${baseUrl}/offers/delete/${offerId}`)
     }
 }
