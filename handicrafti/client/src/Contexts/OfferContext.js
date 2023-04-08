@@ -20,9 +20,6 @@ export const OfferContextProvider = ({
     const navigate = useNavigate();
 
 
-
-
-
     useEffect(() => {
         offerService.getAll()
             .then(result => {
@@ -34,6 +31,11 @@ export const OfferContextProvider = ({
             });
 
     }, []);
+
+    const getOffer = (offerId) => {
+        const offer = offers.find((offer) => offer.id === offerId);
+        return offer;
+    }
 
 
     const onPostReviewSubmit = async (values) => {
@@ -64,27 +66,33 @@ export const OfferContextProvider = ({
         }
 
     }
-    const onEditOfferSubmit = async (pet) => {
-        const result = await offerService.edit(pet._id, pet);
-        const { title, description, photos } = result;
+    const onEditOfferSubmit = async (offer) => {
+        console.log('context!!!');
+        const result = await offerService.edit(offer.id, offer);
+        const { title, description, images } = result;
         if (
             title === "" ||
             description === "" ||
-            photos === ""
+            images === ""
         ) {
             const message = "All fields are required!";
+            navigate("/server-error", { state: { message } });
             return;
         }
+
+        setOffers((state) => state.map((x) => (x.id === offer.id ? result : x)));
+        navigate(`/offers/catalog`);
     }
 
     const deleteOffer = (offerId) => {
-        setOffers((state) => state.filter(offer => offer.id !== offerId))
+        setOffers((state) => state.filter(offer => offer.id !== offerId));
     };
 
 
     const offerContextValues = {
         offers,
         setOffers,
+        getOffer,
         onCreateOfferSubmit,
         onEditOfferSubmit,
         deleteOffer,

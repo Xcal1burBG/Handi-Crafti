@@ -11,7 +11,8 @@ import { useService } from '../../hooks/useService';
 export const EditOffer = () => {
 
     const { offerId } = useParams();
-    const { onEditOfferSubmit } = useOfferContext();
+
+    const { onEditOfferSubmit } = useContext(OfferContext);
     const { errors, minLength, isFormValid, validateImage } = useErrorContext();
 
 
@@ -21,12 +22,10 @@ export const EditOffer = () => {
             id: offerId,
             title: "",
             description: "",
-            photo: "",
+            images: "",
         },
         onEditOfferSubmit
     );
-
-    console.log(values);
 
     useEffect(() => {
         offerService.getById(offerId)
@@ -84,8 +83,10 @@ export const EditOffer = () => {
             <div className="edit-buttons-container">
 
                 <div className="edit-add-photo-container">
-                    <label className="edit-label-photo" htmlFor="photo">Change photo</label>
-                    <input className="edit-add-photo" type="text" name="photo" />
+                    <label className="edit-label-photo" htmlFor="images">Change photo</label>
+                    <input className="edit-add-photo" type="text" name="images"
+                        onChange={changeHandler}
+                        value={values.images} />
                 </div>
 
 

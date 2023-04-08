@@ -33,7 +33,6 @@ export const Details = () => {
             );
     }, [offerId]);
 
-    console.log(offer);
 
     const onReviewSubmit = async (values) => {
         const response = await reviewService.create(offer.handiCrafterId, values.review);
