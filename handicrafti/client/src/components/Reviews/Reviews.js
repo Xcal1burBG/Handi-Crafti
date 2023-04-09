@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { ReviewItem } from '../ReviewItem/ReviewItem';
 import './Reviews.css';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { OfferContext } from '../../Contexts/OfferContext';
 import { AuthContext } from '../../Contexts/AuthContext';
 
@@ -12,16 +12,13 @@ export const Reviews = ({
     const { offers } = useContext(OfferContext);
     const { username } = useContext(AuthContext);
 
-    let offer = offers.find(x => x.id === offerId);
-    let reviews = [];
+    const getOffer = useContext(OfferContext)
+    const offer = getOffer();
+    console.log(offer);
 
-    if (offer.reviewsForHandiCrafter.length != 0) {
-        offer = offers.find(x => x.id === offerId);
-        reviews = offer.reviewsForHandiCrafter
-    }
 
-    ;
 
+    const reviews = [];
 
     return (
 

@@ -67,6 +67,7 @@ export const OfferContextProvider = ({
 
     }
     const onEditOfferSubmit = async (offer) => {
+        console.log('edit submit');
         const result = await offerService.edit(offer.id, offer);
         const { title, description, images } = result;
         if (

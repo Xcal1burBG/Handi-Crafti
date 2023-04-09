@@ -9,6 +9,8 @@ export const Catalog = () => {
 
  const { offers } = useContext(OfferContext);
 
+ console.log(offers);
+
      return (
 
         <div className="catalog-container">

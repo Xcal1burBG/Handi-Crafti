@@ -26,11 +26,17 @@ export const MyOffers = () => {
 
     }, []);
 
+    let username = '';
+    if (myOffers.length > 0) {
+        console.log((myOffers)[0]);
+        username = myOffers[0].handiCraftersUsername;
+    }
+
     return (
         <div className="myoffers-container">
             {myOffers.length === 0
                 ? <h3 className="no-articles">You don't have offers yet</h3>
-                : myOffers.map(x => <Offer key={x.id} {...x} />)
+                : myOffers.map(x => <Offer key={x.id} {...x} handiCrafterUserName={username} />)
             }
 
 
