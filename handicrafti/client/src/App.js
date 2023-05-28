@@ -47,7 +47,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/offers/catalog" element={<Catalog />} />
                 <Route path="/offers/details/:offerId" element={<Details />} />
-                <Route path="/reviews/offer/:offerId" element={<Reviews />} />
+                {/* <Route path="/reviews/offer/:offerId" element={<Reviews />} /> */}
                 <Route element={<RouteGuard />}>
                   <Route path="/offers/create" element={<CreateOffer />} />
                   <Route path="/offers/:userId" element={<MyOffers />} />

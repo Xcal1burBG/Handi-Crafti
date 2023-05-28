@@ -7,6 +7,7 @@ import { offerServiceFactory } from '../../services/offerService';
 import { reviewServiceFactory } from '../../services/reviewService';
 import { OfferContext } from '../../Contexts/OfferContext';
 import { baseUrl } from '../../config/config';
+import { Reviews } from '../Reviews/Reviews';
 
 export const Details = () => {
 
@@ -91,7 +92,7 @@ export const Details = () => {
             </div>
 
             <div className="details-all-images-container">
-                <ImageUnit imageUrl={offer.images}/>
+                <ImageUnit imageUrl={offer.images} />
 
             </div>
 
@@ -101,8 +102,6 @@ export const Details = () => {
                 {isAuthenticated && !isOwner &&
                     <Link to={`/reviews/post/${offer.handiCrafterId}`}>Leave a review</Link>
                 }
-                <Link to={`/reviews/offer/${offerId}`} >View all reviews</Link>
-
 
                 {/* <div className="details-add-photo-container">
                     <label className="details-label-photo" htmlFor="photo">Add photo</label>
@@ -124,6 +123,7 @@ export const Details = () => {
 
             </div >
 
+            <Reviews />
 
         </div >
 

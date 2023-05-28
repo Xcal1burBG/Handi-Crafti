@@ -12,13 +12,10 @@ export const Reviews = ({
     const { offers } = useContext(OfferContext);
     const { username } = useContext(AuthContext);
 
-    const getOffer = useContext(OfferContext)
-    const offer = getOffer();
-    console.log(offer);
+    const offer = offers.find(x => x.id === offerId);
+    console.log(offer.reviewsForHandiCrafter);
 
-
-
-    const reviews = [];
+    
 
     return (
 
@@ -31,10 +28,10 @@ export const Reviews = ({
 
             <div className="review-items-container">
 
-                {reviews.length === 0
+                {offer.reviewsForHandiCrafter.length === 0
                     ? <h3 className="no-reviews">This user still don't have any reviews</h3>
-                    : reviews.map((x, index) => (
-                        <ReviewItem key={index} text={x.text} username={username} />
+                    : offer.reviewsForHandiCrafter.map((x, index) => (
+                        <ReviewItem key={index} text={x.text} username={x.reviewerUserName} />
                     ))
                 }
 

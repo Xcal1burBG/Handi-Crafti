@@ -14,7 +14,6 @@ footer {
 
 }
 
-/* when there are more than 10 offers - footer dissapears */
 .dissapear {
     display: none;
 
@@ -31,7 +30,7 @@ footer {
     margin: 3px 0px 3px 0px;
 }
 
-@media screen and (max-height: 645px) {
+@media screen and (max-height: 700px) {
     footer {
         display: none;
     }
