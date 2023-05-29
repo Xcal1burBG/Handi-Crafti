@@ -35,13 +35,6 @@ export const Reviews = ({
                     ))
                 }
 
-                <div className="reviews-title go-to-catalog">
-                    <Link to={`/offers/details/${offer.id}`} style={{ textDecoration: 'none' }}>
-                        <span >Go back to details</span>
-                    </Link>
-                </div>
-
-
             </div>
 
 
